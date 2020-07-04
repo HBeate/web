@@ -1,0 +1,48 @@
+h1 {
+    color: green;
+}
+h2 {
+    color: blue;
+    text-transform: uppercase;
+}
+}
+p {
+    font-family: Arial, Helvetica, sans-serif
+}
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#zutaten {
+    color: red;
+}
+table, th, tr, td {
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 1px solid seagreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+table {
+    width: 100%;
+}
+th {
+    text-align: left;
+    vertical-align: middle;
+    height: 50px;
+    padding: 15px;
+    background-color: seagreen;
+    color: white;
+}
+td {
+
+    padding: 15px;
+}
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+footer {
+    display: block;
+    height: 100px;
+}
