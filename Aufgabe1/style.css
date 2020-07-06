@@ -1,25 +1,78 @@
+body {
+    background-color: #FFF;
+    margin: 0 auto;
+    min-width: 400px;
+  }
+  .wrapperImpressum p {
+    text-align: center;
+  }
+header {
+    position: fixed;
+    background-color: #466995;
+    border-bottom: 1px solid #466995;
+    width: 100%;
+    z-index: 1;
+}
 h1 {
-    color: green;
+    color: #466995;
+    text-transform: uppercase;
 }
 h2 {
-    color: blue;
-    text-transform: uppercase;
+    color: #466995;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif
+    font-family:'Oswald', sans-serif;
+    text-align: left;
+    padding-left: 20px;
 }
 ul {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: left;
 }
+.nav_link {
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: inline;
+  width: 80px; 
+  z-index: 10;
+  padding: 10px 20px;
+}
+.link_tools{
+  background-color: #466995;
+  display: inline;
+  padding: 10px 20px 10px 20px;
+}
+li {
+    font-family: 'Oswald', sans-serif;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: #DBE9EE;
+  }
+ a:visited {
+    color: #FFF;
+  }
+ a:link {
+    color: #FFF;
+ }
+
 .zutaten {
-    color: red;
+  text-align: left;
+  padding: 0 0 0 220px;
 }
 table, th, tr, td {
     table-layout: auto;
     border-collapse: collapse;
-    border: 1px solid seagreen;
-    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #466995;
+    font-family: 'Oswald', sans-serif;
 }
 table {
     width: 100%;
@@ -29,20 +82,97 @@ th {
     vertical-align: middle;
     height: 50px;
     padding: 15px;
-    background-color: seagreen;
+    background-color: #466995;
     color: white;
 }
 td {
-
     padding: 15px;
+    text-align: left;
 }
 footer {
-    font-family: Arial, Helvetica, sans-serif;
-}
-.uppercase {
-    text-transform: uppercase;
-}
-footer {
-    display: block;
-    height: 100px;
-}
+    background-color: #DBE9EE;
+    text-align: center;
+    text-align: middle;
+    height: 30px;
+    vertical-align: middle;
+    margin: 20px auto;
+    padding: 15px 10px 5px 10px;
+    text-align: center;
+    border: solid 1px;
+  }
+  .newpage{
+    box-sizing: border-box;
+    position: relative;
+    background-color: #DBE9EE;
+    padding: 150px 20px 20px 40px;
+    text-align: center;
+    width: 100%;
+    bottom: 50px;
+    border: black;
+    border-style: dotted;
+    height:100vh;
+ 
+  }
+  .newtopic {
+    box-sizing: border-box;
+    background-color: #DBE9EE;
+    padding: 100px 0 40px 0;
+    text-align: center;
+    width: 100%;
+    border: sienna;
+    border-style: dotted;
+    height:100vh;
+  }
+  .gelerntes {
+    text-align: center;
+  }
+  .hobby {
+    box-sizing: border-box;
+    position: relative;
+    background-color: #DBE9EE;
+    position: right;
+    width: 100%;
+    border: black;
+    border-style: solid;
+  }
+  img {
+    float: left;
+    padding: 20px 20px 20px 20px;
+    vertical-align: middle;
+    align-content: center;
+  }
+  .imgHalloween{
+    box-sizing: border-box;
+    position: relative;
+    background-color: #DBE9EE;
+    position: left;
+    width: 100%;
+  }
+  .imgHobby1{
+    position: relative;
+    border: forestgreen;
+    border-style: solid;
+  }
+  .imgHobby2{
+    align-content: flex-end;
+    border: forestgreen;
+    border-style: solid;
+  }
+  txtHobby1{
+    position: relative;
+text-align: left;
+  }
+  txtHobby2{
+    position: relative;
+    text-align: right;
+  }
+  txtHalloween{
+    position: relative;
+    text-align:left;
+  }
+
+  #github {
+    float: none;
+  }
+
+  
