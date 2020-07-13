@@ -1,0 +1,76 @@
+*{
+    font-size: 18px;
+    --font-size-big: 1.5rem;
+    --font-size-medium: 1.3rem;
+    --font-size-normal:1rem;
+    --font-size-small: 0.8rem;
+    --main-color: white;
+    --link-color: #ac6700;
+    ;
+}
+
+.img_fusterouau {
+    width: 100%;
+    max-height: auto;
+    position: absolute;
+}
+
+.nav {
+    z-index: 1;
+    position: absolute;
+    color: rgb(156, 106, 12);
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline;
+    z-index: 10;
+    padding: 10px 20px;
+    text-align: right;
+    z-index:1;
+}
+.nav_link {
+    z-index: 1;
+    position: absolute;
+    color: rgb(156, 106, 12);
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline;
+    padding: 10px 20px;
+    text-align: right;
+    z-index:1.5;
+}
+ul {
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: 600;
+}
+a:hover {
+    color: var(--link-color)
+  }
+  a:active {
+    text-decoration: underline;
+}
+ a:visited {
+    color:var(--link-color)
+  }
+ a:link {
+    color: var(--link-color)
+ }
+
+
+header {
+    position: fixed;
+    background-color: var(--main-color);
+    width: 100%;
+    z-index: 1;
+    height:100px;
+}

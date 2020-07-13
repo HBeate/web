@@ -1,7 +1,12 @@
+
+
 body {
-    background-color: #FFF;
-    margin: 0 auto;
+    background-color: #DBE9EE;
     min-width: 400px;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+
+
   }
   .wrapperImpressum p {
     text-align: center;
@@ -9,9 +14,9 @@ body {
 header {
     position: fixed;
     background-color: #466995;
-    border-bottom: 1px solid #466995;
     width: 100%;
     z-index: 1;
+
 }
 h1 {
     color: #466995;
@@ -22,9 +27,11 @@ h2 {
 }
 
 p {
-    font-family:'Oswald', sans-serif;
-    text-align: left;
+
     padding-left: 20px;
+}
+.align_left{
+  text-align: left;
 }
 ul {
     margin: 30px auto;
@@ -33,22 +40,19 @@ ul {
 }
 .nav_link {
   color: #FFF;
-  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
   display: inline;
-  width: 80px; 
   z-index: 10;
   padding: 10px 20px;
 }
 .link_tools{
   background-color: #466995;
-  display: inline;
+  text-align:center;
   padding: 10px 20px 10px 20px;
 }
 li {
-    font-family: 'Oswald', sans-serif;
     list-style: none;
 }
 a {
@@ -56,6 +60,7 @@ a {
 }
 a:hover {
     color: #DBE9EE;
+    text-decoration: underline;
   }
  a:visited {
     color: #FFF;
@@ -64,23 +69,27 @@ a:hover {
     color: #FFF;
  }
 
-.zutaten {
+.zutaten  {
   text-align: left;
   padding: 0 0 0 220px;
+}
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
 }
 table, th, tr, td {
     table-layout: auto;
     border-collapse: collapse;
     border: 1px solid #466995;
-    font-family: 'Oswald', sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
 }
-table {
-    width: 100%;
-}
+
 th {
     text-align: left;
     vertical-align: middle;
-    height: 50px;
+    height: 15px;
     padding: 15px;
     background-color: #466995;
     color: white;
@@ -104,7 +113,7 @@ footer {
     box-sizing: border-box;
     position: relative;
     background-color: #DBE9EE;
-    padding: 150px 20px 20px 40px;
+    padding-top: 150px ;
     text-align: center;
     width: 100%;
     bottom: 50px;
@@ -116,13 +125,19 @@ footer {
   .newtopic {
     box-sizing: border-box;
     background-color: #DBE9EE;
-    padding: 100px 0 40px 0;
+    padding: 102px 0 40px 0;
     text-align: center;
     width: 100%;
-    border: sienna;
-    border-style: dotted;
-    height:100vh;
+    border: blue;
+    border-style: fixed 3px;
+  /*  height:100vh;*/
   }
+  .viewPortHeight{    
+    height:100vh;
+    padding: 152px 0 40px 0;
+  }
+
+  
   .gelerntes {
     text-align: center;
   }
@@ -132,47 +147,43 @@ footer {
     background-color: #DBE9EE;
     position: right;
     width: 100%;
-    border: black;
-    border-style: solid;
   }
-  img {
+  .img_floatleft{
     float: left;
+    padding: 20px 20px 20px 20px;
+  }
+  
+  img {
     padding: 20px 20px 20px 20px;
     vertical-align: middle;
     align-content: center;
   }
-  .imgHalloween{
-    box-sizing: border-box;
-    position: relative;
+  .imgAbout{
+    float: left, width 20%;
+  }
+  .hobby{
+    text-align: center;
+  }
+  .hobby1{
+    float: left;
+    width: 150px;
+  }
+  .hobby2{
+    float:left;
+    width: 150px;
+  }
+  .halloween{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     background-color: #DBE9EE;
-    position: left;
     width: 100%;
-  }
-  .imgHobby1{
-    position: relative;
-    border: forestgreen;
-    border-style: solid;
-  }
-  .imgHobby2{
-    align-content: flex-end;
-    border: forestgreen;
-    border-style: solid;
-  }
-  txtHobby1{
-    position: relative;
-text-align: left;
-  }
-  txtHobby2{
-    position: relative;
-    text-align: right;
-  }
-  txtHalloween{
-    position: relative;
-    text-align:left;
-  }
+      }
 
-  #github {
-    float: none;
+  .mygithub {
+    text-align: center;
   }
-
+.setclear{
+  clear: both;
+}
   

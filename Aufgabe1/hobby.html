@@ -1,59 +1,170 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hobby</title>
-        <link a href="./style.css" type="text/css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <ul>
-                <li class="nav_link">
-                    <a href="./index.html">Startseite</a>
-                </li>
-                <li class="nav_link">
-                    <a href="./index.html#about_me">Über mich</a>
-                </li>
-                <li class="nav_link">
-                    <a href="./index.html#gelerntese">Gelerntes</a>
-                </li>
-                <li class="nav_link">
-                    <a href="index.html#tools">Tools</a>
-                </li>
-                <li class="nav_link">
-                    <a href="index.html#lieblingsspeisen">Lieblingsspeisen</a>
-                </li>
-                <li class="nav_link">
-                    <a href="index.html#sprachen">Sprachen</a>
-                </li>
-                <li class="nav_link">Hobbys</li>
-                <li class="nav_link">
-                    <a href="./impressum.html">Impressum</a>
-                </li>
-            </ul>
-        </header>
-        <div class="newpage">
+
+<head>
+    <link a href="./style.css" type="text/css" rel="stylesheet">
+    <title>Hobby</title>
+    <style>
+        .box {
+            border-color: chartreuse;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 180px auto; 
+          grid-auto-rows: minmax(100px, auto);
+
+        }
+        @media (min-width: 600px) {
+            .container {
+
+            display: grid;
+            grid-template-columns: 180px auto auto; /* auto auto auto -> werden automatisch aufgeteilt / % auch mögl, oder mischen */
+            grid-auto-rows: minmax(40px, auto);
+
+        }}
+        .item1_nav {}
+
+        .item2_h1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            text-align: center;
+            padding: 20px;
+            padding-top: 62px;
+        }
+
+        .item3 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .item4 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            text-align: left
+        }
+
+        .item5 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            padding: 20px;
+        }
+
+        .item6 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .item7 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            padding: 20px;
+        }
+
+        .item8 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            padding: 20px;
+        }
+
+        .item9 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            padding: 20px;
+        }
+        .item10 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="box item1_nav">
+            <header>
+                <ul>
+                    <li class="nav_link">
+                        <a href="./index.html">Startseite</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="./index.html#about_me">Über mich</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="./index.html#gelerntese">Gelerntes</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="index.html#tools">Tools</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="index.html#lieblingsspeisen">Lieblingsspeisen</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="index.html#sprachen">Sprachen</a>
+                    </li>
+                    <li class="nav_link">Hobbys</li>
+                    <li class="nav_link">
+                        <a href="./impressum.html">Impressum</a>
+                    </li>
+                </ul>
+            </header>
+        </div>
+        <div class="box item2_h1">
             <div class="hobby">
-            <h1>Hobbys</h1>
-            <p>Mit vier Kindern, Haushalt, Arbeit und dem Kurs beim Coding Campus bleibt eigentlich nicht sehr viel Zeit für Hobbies.
-            </p>
-            <p class="txtHobby1">Ich lese sehr gerne, wenn möglich englische Literatur. In den letzten Monaten bin ich auf englische Hörbücher umgestiegen. So muss ich unterwegs, beim Autofahren oder wenn ich im Haushalt etwas mache nicht auf meine Bücher verzichten.
-            </p>
-            <div class="imgHobby1">
-            <img src="media/hoerbuch.jpg" alt="Hörbuch" width="300px"></div>
-            <p class="txtHobby2">Im Winter gehe ich so oft wie möglich mit den Kindern Schifahren, Snowboarden oder Eislaufen.</p>
-            <div class="imgHobby2">
-            <img src="media/skiing.JPG" alt="Auf der Piste" width="300px"></div>
-            <p class="txtHalloween">Ausserdem koche ich sehr gerne, teste immer wieder neue Rezepte und freue mich, wenn ich etwas Veganes entdeckt habe, das allen schmeckt. Mir ist es wichtig gesund zu kochen und ich versuche so gut es geht unsere Mahlzeiten aus frischen Zutaten zuzubereiten. Ausnahmen, wie zum Beispiel Halloween, bestätigen die Regel ;-)
-            <div class="imgHalloween">
-                <img src="media/halloween1.JPG" alt="Halloween" height="100px">
-                <img src="media/halloween2.JPG" alt="Halloween" height="100px">
-                <img src="media/halloween3.JPG" alt="Halloween" height="100px"><br>
-                <img src="media/halloween5.JPG" alt="Halloween" height="100px">
-                <img src="media/halloween6.JPG" alt="Halloween" height="100px">
-                <img src="media/halloween7.JPG" alt="Halloween" height="100px">
-            </div></p>
+                <h1>Hobbys</h1>
+            </div>
         </div>
+
+        <div class="box item3">
+            Mit vier Kindern, Haushalt, Arbeit und dem Kurs beim Coding Campus bleibt eigentlich nicht sehr viel
+            Zeit für Hobbies.
         </div>
-    </body>
-    <footer>&copy by Beate Mustermann</footer>
+        <div class="box item4">
+            <img class="hobby1" src="media/hoerbuch.jpg" alt="Hörbuch" width="300px">
+        </div>
+        <div class="box item5">
+            Ich lese sehr gerne, hauptsächlich englische Literatur, aber oft fehlt mir die Zeit
+            dazu. In den letzten
+            Monaten bin ich auf Hörbücher umgestiegen. So kann ich meine englischen Bücher auch genießen, wenn ich
+            unterwegs bin, mit dem Auto fahre oder wenn ich Arbeiten im Haushalt erledigen muß.
+        </div>
+
+        <div class="box item6">
+            <img class="hobby2" src="media/skiing.JPG" alt="Auf der Piste" width="300px">
+        </div>
+        <div class="box item7">
+            Im Winter gehe ich so oft wie möglich mit den Kindern Schifahren, Snowboarden oder Eislaufen.
+        </div>
+        <div class="box item8"></div>
+
+
+
+            <div class="box item9">
+                Ausserdem koche ich sehr gerne, teste immer wieder neue Rezepte und freue mich, wenn ich ein
+                neues
+                veganes Rezept entdecke, das allen schmeckt. Mir ist es wichtig gesund zu kochen und ich
+                versuche -
+                so gut es geht - unsere Mahlzeiten aus frischen Zutaten zuzubereiten. Ausnahmen, wie zum
+                Beispiel
+                Halloween, bestätigen die Regel ;-)
+            </div>
+            <div class="box item10">
+                <dif class="halloween">
+                    <img src="media/halloween1.JPG" alt="Halloween" height="100px">
+                    <img src="media/halloween2.JPG" alt="Halloween" height="100px">
+                    <img src="media/halloween3.JPG" alt="Halloween" height="100px">
+                    <img src="media/halloween5.JPG" alt="Halloween" height="100px">
+                    <img src="media/halloween6.JPG" alt="Halloween" height="100px">
+                    <img src="media/halloween7.JPG" alt="Halloween" height="100px">
+                </dif>
+            </div>
+        </div>
+
+    </div>
+</body>
+
 </html>

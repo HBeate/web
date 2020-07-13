@@ -1,0 +1,15 @@
+/* element selector */
+div{
+    background-color: aquamarine;
+}
+/* id selector */
+#header{
+    font-size: 2rem;
+}
+/* Klasseselector */
+.subtitle{
+    color: red;
+}
+#text p {
+    background-color: violet;
+}
