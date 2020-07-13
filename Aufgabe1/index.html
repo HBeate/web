@@ -1,210 +1,87 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Meine erste Website nach langer, langer Zeit ;-)</title>
+        <link a href="./style.css" type="text/css" rel="stylesheet">
+        <style>
+            /* Container holding the image and the text */
+            @media (min-width: 600px) {
+            .container {
+              position: relative;
+              text-align: center;
+              color: white;
+              padding:0;
+              font-size: 4em;
+              font-weight: 600;
+            }
+          /* Centered text */
+            .centered {
+              position: absolute;
+              top: 60%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
 
-<head>
-    <meta charset="utf-8">
-    <title>Startseite</title>
-    <link a href="./style.css" type="text/css" rel="stylesheet">
-</head>
+        }
+        @media(max-width: 599px){        
+            .container {
+              position: relative;
+              text-align: center;
+              color: white;
+              padding:0;
+              font-size: 2.4em;
+              font-weight: 300;
+        }
+        .centered {
+              position: absolute;
+              top: 70%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }}
 
-<body>
-    <div class="wrapper">
-        <header>
-            <ul>
-                <li class="nav_link">Startseite</li>
-                <li class="nav_link">
-                    <a href="#about_me">Über mich</a>
-                </li>
-                <li class="nav_link">
-                    <a href="#gelerntes">Gelerntes</a>
-                </li>
-                <li class="nav_link">
-                    <a href="#tools">Tools</a>
-                </li>
-                <li class="nav_link">
-                    <a href="#lieblingsspeisen">Lieblingsspeisen</a>
-                </li>
-                <li class="nav_link">
-                    <a href="#sprachen">Sprachen</a>
-                </li>
-                <li class="nav_link">
-                    <a href="./hobby.html">Hobbys</a>
-                </li>
-                <li class="nav_link">
-                    <a href="./impressum.html">impressum</a>
-                </li>
-            </ul>
-        </header>
 
-        <div id="about_me" class="newpage">
 
-            <h1>Über mich</h1>
-            <p>
-                <dif class="imgAbout">
-                    <img class="img_floatleft" src="./media/Bewerbungsfoto.JPG" alt="Profilbild" width="160px">
-                    <ul><br><br>
-                        <li>Name: Beate</li>
-                        <li>Wohnort: Feldkirch</li>
-                        <li>Beruf: Sprachtrainerin Englisch</li>
-                    </ul>
-            </p>
+            </style>
+    </head>
+    <body>
+        <div >
+            <header>
+                <ul>
+                    <li class="nav_link">
+                        <a href="./index.html">Startseite</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="./mypage.html#about_me">Über mich</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="./mypage.html#gelerntese">Gelerntes</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="mypage.html#tools">Tools</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="mypage.html#lieblingsspeisen">Lieblingsspeisen</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="mypage.html#sprachen">Sprachen</a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="./hobby.html">Hobbys</a>
+                    </li>
+                    <li class="nav_link">Impressum</li>
+                </ul>
+            </header>
 
-            <p class="align_left">Mein Name ist Beate und ich bin derzeit als Sprachtrainerin in Englisch tätig. Meine
-                Schwerpunkte sind inhouse Firmenkurse und die Arbeit mit Jugendlichen, die den Pflischtschulabschluss
-                nachholen.
-                <br>Weiters besuche ich beim Digital Campus Vorarlberg berufsbegleitend den Coding Campus in Dornbirn.
-            </p>
-        </div>
-        <div id="gelerntes" class="newtopic" class="viewPortHeight">
-            <h1>Gelerntes</h1>
-            <p class="align_left">Im ersten Teil der Ausbildung haben wir uns mit den Grundlagen der Java-Programmierung
-                beschäftigt und mehrere Tools kennengelernt. Anschliessend haben wir uns SQL angesehen und derzeit
-                lernen wir die Web-Basics in HTML/CSS.</p>
-            <ul class=" gelerntes">
-                <li>Java-Programmierung</li>
-                <li>Datenbankanbindung mit SQL</li>
-                <li>Web-Basics mit HTML/CSS</li>
-            </ul>
-            <p class=" gelerntes">In weiterer Folge werden wir im Bereich Web noch Javascript kennenlernen.
-            </p>
-        </div>
-        <div id="tools" class="newtopic" class="viewPortHeight">
-            <h1>Tools</h1>
-            <p>Im Rahmen der Ausbildung beim Codung Campus haben wir bereits einige Tools kennengelernt.</p>
-            <br>
-            <p>
-                <a class="nav_link link_tools" href="https://www.jetbrains.com/de-de/idea/" target="_blank">IntelliJ</a>
-                <a class="nav_link link_tools" href="https://www.java.com/de/" target="_blank">Java</a>
-                <a class="nav_link link_tools" href="https://www.mysql.com/de/" target="_blank">MySQL</a>
-                <a class="nav_link link_tools"
-                    href="https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html"
-                    target:="_blank">JDBC</a>
-                <a class="nav_link link_tools" href="https://github.com/" target="_blank">Github</a>
-            </p>
-            <div><video width="320" height="240" controls>
-
-                    <source src="./media/github.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-
-                </video></div>
-            <p>What is GitHub?
-
-            </p>
-            <div><video width="320" height="240" controls>
-                    <source src="./media/java.mp4" type="video/mp4">
-
-                    Your browser does not support the video tag.
-                </video></div>
-            <p>What is Java? - Java Programming Tutorial</p>
-
-            <div>
-                <p><br><br>Hier geht's zu meinem GitHub-Account: <a href="https://github.com/HBeate"
-                        target="_blank"><br><br><img class="align_center" src="./media/github_logo.png"
-                            width="100px"></a></p>
-            </div>
+ <!--<div id="startseite" class="viewPortHeight">
+                <img class="bg_image" src="./media/bg_img.jpg" alt="startseite" width="100%" height="100%">
+            </div>-->           
+            <div id="startseite" class="container">
+                <img class="bg_image" src="./media/bg_img.jpg" alt="Snow" style="width:100%; height: 100%;">
+                <div class="centered">Willkommen <br>           auf meiner Seite</div>
+              </div>
 
         </div>
-
-        <div id="lieblingsspeisen" class=" newtopic" class="viewPortHeight">
-            <h1>Lieblingsspeisen</h1>
-            <p>Da ich mich vegan ernähre, aber ansonsten nicht sehr wählerisch bin, mag ich so gut wie alle Speisen, die
-                keine tierischen Produkte enthalten.<br></p>
-            <p>Zu meinen absoluten Favoriten gehören jedoch die folgenden Speisen:</p>
-
-            <h2>Curry</h2>
-            <img class="img_floatleft" src="./media/curry.jpg" alt="Curry" width="200px">
-            <p>
-            <ul>
-                <div class="zutaten">
-                    <li>300 g Linsen, rote</li>
-                    <li>1 Liter Wasser</li>
-                    <li>1 EL Gemüsebrühe, instant</li>
-                    <li>
-                        1 große Zwiebel(n)</li>
-                    <li>2 große Karotte(n)</li>
-                    <li>2 Paprikaschote(n), gelb und grün</li>
-                    <li>1 Tomate(n)</li>
-                    <li>3 EL Tomatenmark</li>
-                    <li>1 Pck. Kokosmilch (100 - 200 ml maximal)</li>
-                    <li>2 Chilischote(n), scharfe</li>
-                    <li>Curry, milder</li>
-                    <li>Kurkuma, gemahlen</li>
-                    <li>Koriander, gemahlen</li>
-                    <li>
-                        Kreuzkümmel, gemahlen</li>
-                    <li>Salz</li>
-                    <li>Öl (Sesamöl)</li>
-                    <li>Olivenöl</li>
-                    <li>Sambal Oelek</li>
-                    <li>Rohrzucker</li>
-                    <li>Petersilie oder Dill, frisch gehackt</li>
-                </div>
-            </ul>
-            </p>
-
-            <h2>Chili mit Grünkern</h2>
-            <img class="img_floatleft" src="./media/chili.jpg" alt="Chili" width="200px">
-
-            <p>
-            <ul>
-                <div class="zutaten">
-                    <li>100 g Grünkern, geschrotet</li>
-                    <li>1 kg Rote Bohnen, drained</li>
-                    <li>1 Dose Mais</li>
-                    <li>5 Chili Schoten, chopped</li>
-                    <li>500 ml Suppe</li>
-                    <li>1 Tube Tomatenmark</li>
-                    <li>6 Knoblauchzehen, minzed</li>
-                    <li>500 g Tomaten, chopped</li>
-                    <li>300 g Zwiebeln, chopped</li>
-                    <li>2 EL Öl</li>
-                    <li>chilipulver</li>
-                    <li>Kreuzkümmel</li>
-                    <li>Salz</li>
-                    <li>Pfeffer</li>
-                </div>
-            </ul>
-            </p>
-
-            <h2>Kartoffel-Pilz-Suppe</h2>
-            <img class="img_floatleft" src="./media/suppe.jpg" alt="Kartoffelsuppe" width="200px">
-            <ul>
-                <div class="zutaten">
-                    <li>150 g Zwiebeln, halbiert</li>
-                    <li>400 g Erdäpfel, mehlig, geschält, in Stücken</li>
-                    <li>100 g Lauch, in Stücken</li>
-                    <li>1000 g Wasser</li>
-                    <li>4 TL Gewürzpaste für Gemüsebrühe, selbst gemacht (vegan)</li>
-                    <li>2 EL Olivenöl</li>
-                    <li>300 g frische Pilze (Eierschwammerl, Steinpilze, Champignons), in Scheiben</li>
-                    <li>200 g vegane Sahne (z.B. Sojasahne oder Cashewsahne)</li>
-                    <li>1 - 1 ½ TL Salz, nach Geschmack</li>
-                    <li>½ TL Pfeffer, frisch gemahlen</li>
-                    <li>1 TL Weißweinessig</li>
-                </div>
-            </ul>
-        </div>
-        <div id="sprachen" class="newtopic" class="viewPortHeight">
-            <h1>Sprachen</h1>
-            <table class="center">
-
-                <tr>
-                    <th>Sprache</th>
-                    <th>Kenntnisse</th>
-                </tr>
-                <tr>
-                    <td>Deutsch</td>
-                    <td>Muttersprache</td>
-                </tr>
-                <tr>
-                    <td>Englisch</td>
-                    <td>Verhandlungssicher in Wort und Schrift</td>
-                </tr>
-            </table>
-        </div>
-        <footer class="viewPortHeight">&copy by Beate Mustermann</footer>
-    </div>
-    </div>
-</body>
-
+    </body>
+    <footer>&copy by Beate Hauser</footer>
 </html>

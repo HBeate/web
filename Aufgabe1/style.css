@@ -1,10 +1,11 @@
 
-
+html { font-size: calc(1em + 1vw) }
 body {
     background-color: #DBE9EE;
     min-width: 400px;
     font-family: 'Oswald', sans-serif;
     margin: 0;
+    font-size: 0.5em;
 
 
   }
@@ -57,6 +58,7 @@ li {
 }
 a {
     text-decoration: none;
+
 }
 a:hover {
     color: #DBE9EE;
@@ -117,8 +119,6 @@ footer {
     text-align: center;
     width: 100%;
     bottom: 50px;
-    border: black;
-    border-style: dotted;
     height:100vh;
  
   }
@@ -158,6 +158,11 @@ footer {
     vertical-align: middle;
     align-content: center;
   }
+  .bg_image{
+    padding:0;
+  /*  margin-top: -200px;*/
+
+  }
   .imgAbout{
     float: left, width 20%;
   }
@@ -179,11 +184,9 @@ footer {
     background-color: #DBE9EE;
     width: 100%;
       }
-
   .mygithub {
     text-align: center;
   }
 .setclear{
   clear: both;
 }
-  
