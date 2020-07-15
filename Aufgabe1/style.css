@@ -1,23 +1,21 @@
-
-html { font-size: calc(1em + 1vw) }
+html {
+    font-size: calc(1em + 1vw)
+}
 body {
     background-color: #DBE9EE;
     min-width: 400px;
     font-family: 'Oswald', sans-serif;
     margin: 0;
     font-size: 0.5em;
-
-
-  }
-  .wrapperImpressum p {
+}
+.wrapperImpressum p {
     text-align: center;
-  }
+}
 header {
     position: fixed;
     background-color: #466995;
     width: 100%;
     z-index: 1;
-
 }
 h1 {
     color: #466995;
@@ -26,13 +24,11 @@ h1 {
 h2 {
     color: #466995;
 }
-
 p {
-
     padding-left: 20px;
 }
-.align_left{
-  text-align: left;
+.align_left {
+    text-align: left;
 }
 ul {
     margin: 30px auto;
@@ -40,46 +36,48 @@ ul {
     text-align: left;
 }
 .nav_link {
-  color: #FFF;
-  font-size: 16px;
-  font-weight: 300;
-  text-transform: uppercase;
-  display: inline;
-  z-index: 10;
-  padding: 10px 20px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline;
+    z-index: 10;
+    padding: 10px 20px;
 }
-.link_tools{
-  background-color: #466995;
-  text-align:center;
-  padding: 10px 20px 10px 20px;
+.link_tools {
+    background-color: #466995;
+    text-align: center;
+    padding: 10px 20px;
 }
 li {
     list-style: none;
 }
 a {
     text-decoration: none;
-
 }
 a:hover {
     color: #DBE9EE;
     text-decoration: underline;
-  }
- a:visited {
+}
+a:visited {
     color: #FFF;
-  }
- a:link {
+}
+a:link {
     color: #FFF;
- }
+}
 
-.zutaten  {
-  text-align: left;
-  padding: 0 0 0 220px;
+.zutaten {
+    text-align: left;
+    padding: 0 0 0 220px;
 }
 table.center {
-  margin-left:auto; 
-  margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-table, th, tr, td {
+table,
+th,
+tr,
+td {
     table-layout: auto;
     border-collapse: collapse;
     border: 1px solid #466995;
@@ -87,7 +85,6 @@ table, th, tr, td {
     margin-right: 20px;
     text-align: center;
 }
-
 th {
     text-align: left;
     vertical-align: middle;
@@ -101,92 +98,92 @@ td {
     text-align: left;
 }
 footer {
-    background-color: #DBE9EE;
+  background-color: #DBE9EE;
+    position: fixed;
+    bottom: 0;
     text-align: center;
     text-align: middle;
     height: 30px;
-    vertical-align: middle;
-    margin: 20px auto;
-    padding: 15px 10px 5px 10px;
-    text-align: center;
-    border: solid 1px;
-  }
-  .newpage{
-    box-sizing: border-box;
+    padding: 15px 10px 5px;
+    width: 100%;
+    z-index: 1;
+}
+.newpage {
+  box-sizing: border-box;
     position: relative;
     background-color: #DBE9EE;
-    padding-top: 150px ;
+    padding-top: 150px;
     text-align: center;
     width: 100%;
     bottom: 50px;
-    height:100vh;
- 
-  }
-  .newtopic {
+    height: 100vh;
+}
+.newtopic {
     box-sizing: border-box;
     background-color: #DBE9EE;
-    padding: 102px 0 40px 0;
+    padding: 102px 0 40px;
     text-align: center;
     width: 100%;
-    border: blue;
-    border-style: fixed 3px;
-  /*  height:100vh;*/
-  }
-  .viewPortHeight{    
-    height:100vh;
-    padding: 152px 0 40px 0;
-  }
-
-  
-  .gelerntes {
+}
+#gelerntes  {
+    height: 100vh;
+}
+#sprachen {
+    height: 100vh;
+}
+.gelerntes {
     text-align: center;
-  }
-  .hobby {
+}
+.hobby {
     box-sizing: border-box;
     position: relative;
     background-color: #DBE9EE;
     position: right;
     width: 100%;
-  }
-  .img_floatleft{
+}
+.img_floatleft {
     float: left;
-    padding: 20px 20px 20px 20px;
-  }
-  
-  img {
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
+}
+.roundCorner{
+  border-radius: 50%;
+}
+img {
+  padding: 20px;
     vertical-align: middle;
     align-content: center;
-  }
-  .bg_image{
-    padding:0;
-  /*  margin-top: -200px;*/
 
-  }
-  .imgAbout{
+}
+.bg_image {
+    padding: 0;
+    margin-top: 76px;
+
+}
+.imgAbout {
     float: left, width 20%;
-  }
-  .hobby{
+
+}
+.hobby {
     text-align: center;
-  }
-  .hobby1{
+}
+.hobby1 {
     float: left;
     width: 150px;
-  }
-  .hobby2{
-    float:left;
+}
+.hobby2 {
+    float: left;
     width: 150px;
-  }
-  .halloween{
-    display: flex; 
-    justify-content: center; 
+}
+.halloween {
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: #DBE9EE;
     width: 100%;
-      }
-  .mygithub {
+}
+.mygithub {
     text-align: center;
-  }
-.setclear{
-  clear: both;
+}
+.setclear {
+    clear: both;
 }
