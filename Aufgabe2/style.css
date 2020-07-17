@@ -12,9 +12,12 @@ html { font-size: calc(1em + 1vw) }
 body{
     font-size: var(--font-size-small);
 }
+p{
+    padding: 20px 20px 20px 20px;
+}
 .tkd_banner {
     width: 100%;
-    max-height: auto;
+    max-height: 300px;
     max-width:auto;
     text-align:center;
     padding-top:90px;
@@ -90,6 +93,22 @@ header {
     padding-top:0px;
 }
 form{
-align-items:center ;
+
+text-align: center;
 font-size: var(--font-size-small);
+}
+input, textarea{
+    width: 300px;
+}
+label{
+margin-bottom: 0;
+margin: 10px 0px 0px 0px;
+text-align: left;
+}
+.button{
+    width: 80px;
+}
+iframe{
+  padding: 20px;
+  text-align: center;
 }

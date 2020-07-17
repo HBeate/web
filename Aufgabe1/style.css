@@ -7,6 +7,7 @@ body {
     font-family: 'Oswald', sans-serif;
     margin: 0;
     font-size: 0.5em;
+    overflow-y:scroll;
 }
 .wrapperImpressum p {
     text-align: center;
@@ -24,9 +25,7 @@ h1 {
 h2 {
     color: #466995;
 }
-p {
-    padding-left: 20px;
-}
+
 .align_left {
     text-align: left;
 }
@@ -54,18 +53,11 @@ li {
 }
 a {
     text-decoration: none;
+    color: #FFF;
 }
 a:hover {
-    color: #DBE9EE;
     text-decoration: underline;
 }
-a:visited {
-    color: #FFF;
-}
-a:link {
-    color: #FFF;
-}
-
 .zutaten {
     text-align: left;
     padding: 0 0 0 220px;
@@ -102,7 +94,6 @@ footer {
     position: fixed;
     bottom: 0;
     text-align: center;
-    text-align: middle;
     height: 30px;
     padding: 15px 10px 5px;
     width: 100%;
@@ -127,6 +118,7 @@ footer {
 }
 #gelerntes  {
     height: 100vh;
+    padding-left:20px;
 }
 #sprachen {
     height: 100vh;
@@ -143,25 +135,24 @@ footer {
 }
 .img_floatleft {
     float: left;
-    padding: 20px;
+    padding-left: 20px;
+    box-shadow: 10px 10px 5px grey;
+    margin: 20px;
 }
-.roundCorner{
-  border-radius: 50%;
+.shadow{
+    box-shadow: 10px 10px 5px grey;
 }
 img {
-  padding: 20px;
+
     vertical-align: middle;
     align-content: center;
-
 }
 .bg_image {
     padding: 0;
     margin-top: 76px;
-
 }
 .imgAbout {
     float: left, width 20%;
-
 }
 .hobby {
     text-align: center;
@@ -179,7 +170,8 @@ img {
     justify-content: center;
     align-items: center;
     background-color: #DBE9EE;
-    width: 100%;
+
+padding: 0px 10px 30px 0px;
 }
 .mygithub {
     text-align: center;

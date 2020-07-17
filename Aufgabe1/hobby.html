@@ -12,7 +12,7 @@
         }
         .container {
             display: grid;
-            grid-template-columns: 180px auto; 
+            grid-template-columns: 180px auto 180px auto; 
           grid-auto-rows: minmax(100px, auto);
 
         }
@@ -20,6 +20,7 @@
             .container {
 
             display: grid;
+            /* check this out - why isn't this with the columns working*/
             grid-template-columns: 180px auto auto; /* auto auto auto -> werden automatisch aufgeteilt / % auch mögl, oder mischen */
             grid-auto-rows: minmax(40px, auto);
 
@@ -28,32 +29,33 @@
 
         .item2_h1 {
             grid-column-start: 1;
-            grid-column-end: 4;
+            grid-column-end: 5;
             text-align: center;
             padding-top: 62px;
         }
 
         .item3 {
             grid-column-start: 1;
-            grid-column-end: 4;
+            grid-column-end: 5;
             text-align: center;
         }
 
         .item4 {
             grid-column-start: 1;
             grid-column-end: 2;
-            text-align: left
+            padding: 20px;
         }
 
         .item5 {
             grid-column-start: 2;
-            grid-column-end: 3;
+            grid-column-end: 5;
             padding: 20px;
         }
 
         .item6 {
             grid-column-start: 1;
             grid-column-end: 2;
+            padding: 20px;
         }
 
         .item7 {
@@ -69,13 +71,14 @@
         }
 
         .item9 {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            padding: 20px;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            padding-left: 20px;
         }
         .item10 {
-            grid-column-start: 2;
-            grid-column-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            padding-top: 10px;
         }
 
     </style>
@@ -124,7 +127,7 @@
             Zeit für Hobbies.</p>
         </div>
         <div class="box item4">
-            <img class="hobby1" src="media/hoerbuch.jpg" alt="Hörbuch" width="300px">
+            <img class="hobby1 shadow" src="media/hoerbuch.jpg" alt="Hörbuch" width="300px">
         </div>
         <div class="box item5">
             Ich lese sehr gerne, hauptsächlich englische Literatur, aber oft fehlt mir die Zeit
@@ -134,7 +137,7 @@
         </div>
 
         <div class="box item6">
-            <img class="hobby2" src="media/skiing.JPG" alt="Auf der Piste" width="300px">
+            <img class="hobby2 shadow" src="media/skiing.JPG" alt="Auf der Piste" width="300px">
         </div>
         <div class="box item7">
             Im Winter gehe ich so oft wie möglich mit den Kindern Schifahren, Snowboarden oder Eislaufen.
@@ -154,17 +157,18 @@
             </div>
             <div class="box item10">
                 <dif class="halloween">
-                    <img src="media/halloween1.JPG" alt="Halloween" height="100px">
-                    <img src="media/halloween2.JPG" alt="Halloween" height="100px">
-                    <img src="media/halloween3.JPG" alt="Halloween" height="100px">
-                    <img src="media/halloween5.JPG" alt="Halloween" height="100px">
-                    <img src="media/halloween6.JPG" alt="Halloween" height="100px">
-                    <img src="media/halloween7.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween1.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween2.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween3.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween5.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween6.JPG" alt="Halloween" height="100px">
+                    <img class="halloween" src="media/halloween7.JPG" alt="Halloween" height="100px">
                 </dif>
             </div>
         </div>
 
     </div>
+
 </body>
 <footer>&copy by Beate Hauser</footer>
 </html>
