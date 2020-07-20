@@ -1,19 +1,72 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+/***********************************************************
+index
+************************************************************/
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    color: #0e8304;
+    text-decoration: underline;
+}
+a:visited {
+    color: #0e8304;
+}
+a:link {
+    color: #0e8304;
+}
 
 
-
-form{
-
+form {
     text-align: center;
     font-size: var(--font-size-small);
-    }
-input{
+}
+.inputPw {
     width: 300px;
 }
-label{
-margin-bottom: 0;
-margin: 10px 0px 0px 0px;
-text-align: left;
+
+.labelPw {
+    margin: 10px 0 0;
+    text-align: left;
 }
-.button{
+.buttonPw {
     width: 80px;
+}
+/***********************************************************
+Calculator
+************************************************************/
+table, td, tr{
+    border-spacing: 4px;
+    padding: 0px;
+}
+table{
+    background-color: lightgray ;
+}
+.inputCalc {
+    border: 0px;
+    background-color:lightgray;
+    width: 208px;
+    height: 50px;
+    text-align: right;
+    padding-right: 4px;
+}
+.btnCalc {
+    width: 50px;
+    height: 50px;
+}
+.btnClear {
+    width: 158px;
+    height: 50px;
+}
+.resultCalc{
+    border: 0px;
+    background-color:lightgray;
+    width: 208px;
+    height: 50px;
+    text-align: right;
+    padding-right: 4px;
+    font-size: 40px;
 }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link a href="./style3.css" type="text/css" rel="stylesheet">
+        <script>
+                var myArray = [];
+                var inputString = "";
+                function addCalculation(value) {
+                        myArray.push(value);
+                        console.log(myArray);
+                        //var input = document.getElementById(id).value;
+                        // if (document.getElementById('negative').clicked == true) {
+                        //         var negValue = value * (-1);
+                        //        inputString += negValue;
+                        //} else {
+
+                        // }
+                        inputString += value;
+                        document.getElementById('calculation').value = inputString;
+                }
+                function solveCalculation() {
+                        var result = "";
+                        result = eval(inputString);
+                        document.getElementById('result').value = result;
+                        inputString = result;
+                        result = ""
+                }
+                function clearAll() {
+                        document.getElementById('calculation').value = "";
+                        document.getElementById('result').value = "";
+                        result = "";
+                        inputString = "";
+                        myArray = [];
+                }
+                function negativeNumber() {
+                        var lastElement = myArray.length - 1;
+                        var newValue = myArray[lastElement];
+                        var checkIfNumber = parseInt(newValue);
+                        var secondLastElement = lastElement - 1; //+ if secondlast === "+" then - els if +
+                        var valueSecondLastElement = myArray[secondLastElement]
+                        if (!isNaN(checkIfNumber)) {
+                                /*        newValue = newValue * (-1);
+                                          myArray[lastElement] = newValue; */
+                                //myarr[second...] = 
+                                if (valueSecondLastElement === "+") {
+                                        var newSecondLastElement = "";
+                                        newSecondLastElement = "-";
+                                } else if (valueSecondLastElement === "-") {
+                                        newSecondLastElement = "+";
+                                        myArray[secondLastElement] = newSecondLastElement;
+                                }else {
+                                        newValue = newValue * (-1);
+                                        myArray[lastElement] = newValue;
+                                }
+
+
+                                console.log(myArray);
+                                inputString = "";
+
+                                for (let i = 0; i < myArray.length; i++) {
+                                        inputString += myArray[i];
+                                        console.log(inputString);
+                                }
+                                document.getElementById('calculation').value = inputString;
+                        }
+                }
+
+
+        </script>
+</head>
+
+<body>
+        <table>
+                <tr>
+                        <td colspan="4"><input class="inputCalc" type="text" id="calculation" name="calculation"
+                                        value="" disabled></td>
+                </tr>
+                <tr>
+                        <td colspan="4"><input class="resultCalc" type="text" id="result" name="result" disabled></td>
+                </tr>
+                <tr>
+                        <td colspan="3"><button class="btnClear" type="button" id="clear" name="clear" value="CLEAR"
+                                        onclick="clearAll()">CLEAR</button></td>
+                        <td><button class="btnCalc" type="button" id="divide" name="divide" value="/"
+                                        onclick="addCalculation('/')">/</button></td>
+                </tr>
+                <tr>
+                        <td><button class="btnCalc" type="button" id="seven" name="seven" value="7"
+                                        onclick="addCalculation(7)">7</button></td>
+                        <td><button class="btnCalc" type="button" id="eight" name="eight" value="8"
+                                        onclick="addCalculation(8)">8</button></td>
+                        <td><button class="btnCalc" type="button" id="nine" name="nine" value="9"
+                                        onclick="addCalculation(9)">9</button></td>
+                        <td><button class="btnCalc" type="button" id="multyply" name="multyply" value="*"
+                                        onclick="addCalculation('*')">*</button></td>
+                </tr>
+                <tr>
+                        <td><button class="btnCalc" type="button" id="four" name="four" value="4"
+                                        onclick="addCalculation(4)">4</button></td>
+                        <td><button class="btnCalc" type="button" id="five" name="five" value="5"
+                                        onclick="addCalculation(5)">5</button></td>
+                        <td><button class="btnCalc" type="button" id="six" name="six" value="6"
+                                        onclick="addCalculation(6)">6</button></td>
+                        <td><button class="btnCalc" type="button" id="subtract" name="subtract" value="-"
+                                        onclick="addCalculation('-')">-</button></td>
+                </tr>
+                <tr>
+                        <td><button class="btnCalc" type="button" id="one" name="one" value="1"
+                                        onclick="addCalculation(1)">1</button></td>
+                        <td><button class="btnCalc" type="button" id="two" name="two" value="2"
+                                        onclick="addCalculation(2)">2</button></td>
+                        <td><button class="btnCalc" type="button" id="three" name="three" value="3"
+                                        onclick="addCalculation(3)">3</button></td>
+                        <td><button class="btnCalc" type="button" id="add" name="add" value="+"
+                                        onclick="addCalculation('+')">+</button></td>
+                </tr>
+                <tr>
+                        <td><button class="btnCalc" type="button" id="negative" name="negative" value="+/-"
+                                        onclick="negativeNumber()">+/-</button>
+                        </td>
+                        <td><button class="btnCalc" type="button" id="zero" name="zero" value="0"
+                                        onclick="addCalculation(0)">0</button></td>
+                        <td><button class="btnCalc" type="button" id="decimal" name="decimal" value="."
+                                        onclick="addCalculation('.')">.</button></td>
+                        <td><button class="btnCalc" type="button" id="equals" name="equals" value="="
+                                        onclick="solveCalculation('=')">=</button></td>
+                </tr>
+        </table>
+</body>
+
+</html>
