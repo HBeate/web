@@ -39,7 +39,17 @@ function addCalculation(value) {
 
     if (!isNaN(inputNumber)) { // if it's a number
         numberString += inputNumber; //it adds every input number to the numberstring
-    } else {
+    }/* else if (value ==='+/-') {
+
+        myArray.push(numberString); // numberString (just the numbers) are pushed into the array
+
+        console.log(numberString);
+        numberString ="";
+        for (let i = 0; i < myArray.length; i++) {
+            inputString += myArray[i]; // the empty inputString is filled with all the data from the array
+            console.log(inputString); //printn to the console
+        }
+    }*/ else {
         inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
         myArray.push(numberString); // numberString (just the numbers) are pushed into the array
         if (value !== "=")  // if all other input (+-*/) isn't an = then....
@@ -64,6 +74,7 @@ function solveCalculation() {
     document.getElementById('result').value = result; //writes the result into the calculator result text field
     inputString = result; // puts the result into the inputString
     result = "" //clears result
+
 }
 function clearAll() {//clears variables, strings, array & textfields of the calculator
     document.getElementById('calculation').value = "";
@@ -73,7 +84,7 @@ function clearAll() {//clears variables, strings, array & textfields of the calc
     myArray = [];
 }
 function negativeNumber() {
-
+addCalculation()
     var lastElement = myArray.length - 1; //gets the postiton of the last element of the array
     var newValue = myArray[lastElement]; // gets the value of the last element of the array
     var checkIfNumber = parseInt(newValue); // analyses it newValue is a number
