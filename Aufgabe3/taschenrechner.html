@@ -6,71 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link a href="./style3.css" type="text/css" rel="stylesheet">
-        <script>
-                var myArray = [];
-                var inputString = "";
-                function addCalculation(value) {
-                        myArray.push(value);
-                        console.log(myArray);
-                        //var input = document.getElementById(id).value;
-                        // if (document.getElementById('negative').clicked == true) {
-                        //         var negValue = value * (-1);
-                        //        inputString += negValue;
-                        //} else {
-
-                        // }
-                        inputString += value;
-                        document.getElementById('calculation').value = inputString;
-                }
-                function solveCalculation() {
-                        var result = "";
-                        result = eval(inputString);
-                        document.getElementById('result').value = result;
-                        inputString = result;
-                        result = ""
-                }
-                function clearAll() {
-                        document.getElementById('calculation').value = "";
-                        document.getElementById('result').value = "";
-                        result = "";
-                        inputString = "";
-                        myArray = [];
-                }
-                function negativeNumber() {
-                        var lastElement = myArray.length - 1;
-                        var newValue = myArray[lastElement];
-                        var checkIfNumber = parseInt(newValue);
-                        var secondLastElement = lastElement - 1; //+ if secondlast === "+" then - els if +
-                        var valueSecondLastElement = myArray[secondLastElement]
-                        if (!isNaN(checkIfNumber)) {
-                                /*        newValue = newValue * (-1);
-                                          myArray[lastElement] = newValue; */
-                                //myarr[second...] = 
-                                if (valueSecondLastElement === "+") {
-                                        var newSecondLastElement = "";
-                                        newSecondLastElement = "-";
-                                } else if (valueSecondLastElement === "-") {
-                                        newSecondLastElement = "+";
-                                        myArray[secondLastElement] = newSecondLastElement;
-                                }else {
-                                        newValue = newValue * (-1);
-                                        myArray[lastElement] = newValue;
-                                }
-
-
-                                console.log(myArray);
-                                inputString = "";
-
-                                for (let i = 0; i < myArray.length; i++) {
-                                        inputString += myArray[i];
-                                        console.log(inputString);
-                                }
-                                document.getElementById('calculation').value = inputString;
-                        }
-                }
-
-
-        </script>
+        <script  src="index.js"></script>
 </head>
 
 <body>
@@ -120,7 +56,7 @@
                 </tr>
                 <tr>
                         <td><button class="btnCalc" type="button" id="negative" name="negative" value="+/-"
-                                        onclick="negativeNumber()">+/-</button>
+                                        onclick="negativeNumber(); addCalculation('')">+/-</button>
                         </td>
                         <td><button class="btnCalc" type="button" id="zero" name="zero" value="0"
                                         onclick="addCalculation(0)">0</button></td>
