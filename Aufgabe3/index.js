@@ -36,39 +36,42 @@ var numberString = "";
 function addCalculation(value) {
     var inputNumber = parseInt(value);
     document.getElementById('calculation').value = "";
+ //   if (result == "") {
+        if (!isNaN(inputNumber)) { // if it's a number
+            numberString += inputNumber; //it adds every input number to the numberstring
+        } else if (value === '+-') {
 
-    if (!isNaN(inputNumber)) { // if it's a number
-        numberString += inputNumber; //it adds every input number to the numberstring
-    } else if (value ==='+-') {
+            myArray.push(numberString); // numberString (just the numbers) are pushed into the array
+            console.log(numberString);
+            numberString = "";
+            inputString = "";
+            for (let i = 0; i < myArray.length; i++) {
+                inputString += myArray[i]; // the empty inputString is filled with all the data from the array
+                console.log(inputString); //printn to the console
+            }
+        } else {
+            inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
+            myArray.push(numberString); // numberString (just the numbers) are pushed into the array
+            if (value !== "=")  // if all other input (+-*/) isn't an = then....
+                myArray.push(value);  // push the logical operator to the array
+            numberString = "";  // empty the numberString to get it ready for the next round
 
-        myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-
-        console.log(numberString);
-        numberString ="";
-        for (let i = 0; i < myArray.length; i++) {
-            inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); //printn to the console
+            for (let i = 0; i < myArray.length; i++) {
+                inputString += myArray[i]; // the empty inputString is filled with all the data from the array
+                console.log(inputString); //printn to the console
+            }
         }
-    } else {
-        inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
-        myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-        if (value !== "=")  // if all other input (+-*/) isn't an = then....
-            myArray.push(value);  // push the logical operator to the array
-        numberString = "";  // empty the numberString to get it ready for the next round
+        document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
 
-        for (let i = 0; i < myArray.length; i++) {
-            inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); //printn to the console
+        if (numberString !== "") { // 9 If numberString is not empty...
+            document.getElementById('calculation').value += numberString; // 778 + 45 + >>>>> 9 <<<<<<   ...then add that also to the calculation field of the calculator
         }
-    }
-    document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
-
-    if (numberString !== "") { // 9 If numberString is not empty...
-        document.getElementById('calculation').value += numberString; // 778 + 45 + >>>>> 9 <<<<<<   ...then add that also to the calculation field of the calculator
-    }
+ //   } else {
+//        clearAll();
+ //   }
 }
 function solveCalculation() {
-    addCalculation('='); // ????????????????? Does this just write = into the calculator field? 
+    addCalculation('='); // 
     var result = "";
     result = eval(inputString); // it computes the calculation
     document.getElementById('result').value = result; //writes the result into the calculator result text field
@@ -84,7 +87,7 @@ function clearAll() { // clears variables, strings, array & textfields of the ca
     myArray = [];
 }
 function negativeNumber() {
-addCalculation()
+    addCalculation('+-')
     var lastElement = myArray.length - 1; // gets the postiton of the last element of the array
     var newValue = myArray[lastElement]; // gets the value of the last element of the array
     var checkIfNumber = parseInt(newValue); // analyses it newValue is a number
@@ -94,6 +97,7 @@ addCalculation()
         if (valueSecondLastElement === "+") { // if valueSecondLastElement is a +
             var newSecondLastElement = ""; // new variable
             newSecondLastElement = "-"; // fill the new variable with -
+            myArray[secondLastElement] = newSecondLastElement; //replaces the secondLastElement with the newSecondLastElement
         } else if (valueSecondLastElement === "-") { //if valueSecondLastElement is a -
             newSecondLastElement = "+"; // newSecondLastElement is filled with +
             myArray[secondLastElement] = newSecondLastElement; //replaces the secondLastElement with the newSecondLastElement
