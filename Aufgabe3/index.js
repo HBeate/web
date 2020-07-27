@@ -39,7 +39,7 @@ function addCalculation(value) {
 
     if (!isNaN(inputNumber)) { // if it's a number
         numberString += inputNumber; //it adds every input number to the numberstring
-    }/* else if (value ==='+/-') {
+    } else if (value ==='+-') {
 
         myArray.push(numberString); // numberString (just the numbers) are pushed into the array
 
@@ -49,7 +49,7 @@ function addCalculation(value) {
             inputString += myArray[i]; // the empty inputString is filled with all the data from the array
             console.log(inputString); //printn to the console
         }
-    }*/ else {
+    } else {
         inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
         myArray.push(numberString); // numberString (just the numbers) are pushed into the array
         if (value !== "=")  // if all other input (+-*/) isn't an = then....
@@ -73,10 +73,10 @@ function solveCalculation() {
     result = eval(inputString); // it computes the calculation
     document.getElementById('result').value = result; //writes the result into the calculator result text field
     inputString = result; // puts the result into the inputString
-    result = "" //clears result
+    result = "" // clears result
 
 }
-function clearAll() {//clears variables, strings, array & textfields of the calculator
+function clearAll() { // clears variables, strings, array & textfields of the calculator
     document.getElementById('calculation').value = "";
     document.getElementById('result').value = "";
     result = "";
@@ -85,13 +85,13 @@ function clearAll() {//clears variables, strings, array & textfields of the calc
 }
 function negativeNumber() {
 addCalculation()
-    var lastElement = myArray.length - 1; //gets the postiton of the last element of the array
+    var lastElement = myArray.length - 1; // gets the postiton of the last element of the array
     var newValue = myArray[lastElement]; // gets the value of the last element of the array
     var checkIfNumber = parseInt(newValue); // analyses it newValue is a number
     var secondLastElement = lastElement - 1; // gets the position of the second to last element of the array
     var valueSecondLastElement = myArray[secondLastElement] // gets the value of the second to last element of the array
-    if (!isNaN(checkIfNumber)) { //if checkIfNumber is a number
-        if (valueSecondLastElement === "+") { //if valueSecondLastElement is a +
+    if (!isNaN(checkIfNumber)) { // if checkIfNumber is a number
+        if (valueSecondLastElement === "+") { // if valueSecondLastElement is a +
             var newSecondLastElement = ""; // new variable
             newSecondLastElement = "-"; // fill the new variable with -
         } else if (valueSecondLastElement === "-") { //if valueSecondLastElement is a -
@@ -101,7 +101,7 @@ addCalculation()
             newValue = newValue * (-1); // switches sign of a number and stores it in newValue
             myArray[lastElement] = newValue; // repalces the last element of the array with newValue
         }
-        console.log(myArray); //writes it onto the console
+        console.log(myArray); // writes it onto the console
         inputString = ""; // clears inputString -> so that it can be filled with the data of the array
 
         for (let i = 0; i < myArray.length; i++) { // fills inputString with the data from the array
