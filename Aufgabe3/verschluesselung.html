@@ -7,15 +7,54 @@
     <title>Document</title>
     <link a href="./style3.css" type="text/css" rel="stylesheet">
     <script src="./index.js"></script>
+    <style>
+        .box {
+            padding: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto 100px auto;
+            /* auto auto auto -> werden automatisch aufgeteilt / % auch mögl, oder mischen */
+            grid-auto-rows: minmax(100px, auto);
+            column-gap: 2px;
+            row-gap: 2px
+        }
+
+        .item1 {
+            grid-column: span 3;
+            justify-self: center;
+        }
+
+        .item2 {
+            grid-column: span 1;
+            justify-self: center;
+        }
+
+        .item3 {
+            grid-column: span 1;
+            justify-self: center;
+        }
+
+        .item4 {
+            grid-column: span 1;
+            justify-self: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Verschlüsselung</h1>
-    <label for="usrname">User name:</label>
-    <input type="text" id="usrname" name="usrname" ><br><br>
-    <label for="pw">Password:</label>
-    <input type="text" id="pw" name="pw"><br><br>
-    <button type="button" onclick="clickLogin()">Login</button>
+
+    <div class="container">
+        <div class="box item1">
+            <h1>Online Encrypting Tool</h1>
+        </div>
+        <div class="box item2"><textarea id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div>
+        <div class="box item3"><label for="quantity">Shift</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" max="25"></div>
+        <div class="box item4"> <textarea id="coded" name="coded" rows="4" cols="50" placeholder="encrypted"></textarea></div>
+    </div>
+
 </body>
 
 </html>

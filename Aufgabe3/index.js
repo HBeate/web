@@ -29,46 +29,77 @@ function clickLogin() {
 }
 /***********************************
  * CALCULATOR
+ * /0                                           DONE
+ * +- change                                    DONE
+ * +-/* at the beginning                        DONE
+ * 9//////3                                     DONE (same operator) - when they are the exact same operator
  ***********************************/
 var myArray = [];
 var inputString = "";
 var numberString = "";
+var lastInput = "";
+
 function addCalculation(value) {
+    //if lastInput === "operator" && value === "opeartor" ==> return;
+    if (lastInput === "+" && value === "+" || lastInput === "-" && value === "-" ||lastInput === "*" && value === "*" || lastInput === "/" && value === "/" ){
+        return;
+    }
+    if (lastInput === "+" && value === "-" ){
+        lastInput == value;
+    }
+    if(myArray.length === 0 && numberString === "" &&  (value === "+" || value === "-" || value === "*" || value === "/")) {
+        alert("Please, begin the calculation with a number!");
+        return;
+    }
     var inputNumber = parseInt(value);
     document.getElementById('calculation').value = "";
- //   if (result == "") {
-        if (!isNaN(inputNumber)) { // if it's a number
-            numberString += inputNumber; //it adds every input number to the numberstring
-        } else if (value === '+-') {
-
+    if (lastInput === "/" && value === 0) {
+        myAlert();
+        return;
+    }
+    if (lastInput === "=" && !isNaN(inputNumber)) {
+        clearAll();
+    } else if (lastInput === "=" && value === '+-') {
+        result = document.getElementById('result').value;
+        result = result * (-1);
+        myArray = [];
+        myArray.push(result);
+        document.getElementById('result').value = result;
+    }
+    lastInput = value;
+    if (!isNaN(inputNumber)) { // if it's a number
+        numberString += inputNumber; //it adds every input number to the numberstring
+    } else if (value === '+-') {
+        if(numberString !== "")
             myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-            console.log(numberString);
-            numberString = "";
-            inputString = "";
-            for (let i = 0; i < myArray.length; i++) {
-                inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-                console.log(inputString); //printn to the console
-            }
-        } else {
-            inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
-            myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-            if (value !== "=")  // if all other input (+-*/) isn't an = then....
-                myArray.push(value);  // push the logical operator to the array
-            numberString = "";  // empty the numberString to get it ready for the next round
-
-            for (let i = 0; i < myArray.length; i++) {
-                inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-                console.log(inputString); //printn to the console
-            }
+        console.log(numberString);
+        numberString = "";
+        inputString = "";
+        for (let i = 0; i < myArray.length; i++) {
+            inputString += myArray[i]; // the empty inputString is filled with all the data from the array
+            console.log(inputString); //printn to the console
         }
-        document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
+    } else {
+        inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
+        myArray.push(numberString); // numberString (just the numbers) are pushed into the array
+        if (value !== "=")  // if all other input (+-*/) isn't an = then.... 
+            myArray.push(value);  // push the logical operator to the array
+        numberString = "";  // empty the numberString to get it ready for the next round
 
-        if (numberString !== "") { // 9 If numberString is not empty...
-            document.getElementById('calculation').value += numberString; // 778 + 45 + >>>>> 9 <<<<<<   ...then add that also to the calculation field of the calculator
+        for (let i = 0; i < myArray.length; i++) {
+            inputString += myArray[i]; // the empty inputString is filled with all the data from the array
+            console.log(inputString); //printn to the console
         }
- //   } else {
-//        clearAll();
- //   }
+    }
+    document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
+
+    if (numberString !== "") { // 9 If numberString is not empty...
+        document.getElementById('calculation').value += numberString; // 778 + 45 + >>>>> 9 <<<<<<   ...then add that also to the calculation field of the calculator
+    }
+
+}
+function myAlert() {
+    alert("Division by 0 not possible");
 }
 function solveCalculation() {
     addCalculation('='); // 
@@ -115,3 +146,17 @@ function negativeNumber() {
         document.getElementById('calculation').value = inputString; // displays inputString in the calculation text field
     }
 }
+/*function replaceOperator(){
+    var lastOperator = myArray.length - 1;
+    var newOperator = myArray[lastElement]
+
+}*/
+
+/***********************************
+ * ONLINE VERSCHLÜSSELUNGSTOOL
+ ***********************************/
+
+
+/***********************************
+* TO-DO APP
+***********************************/
