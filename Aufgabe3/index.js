@@ -41,20 +41,29 @@ var lastInput = "";
 
 function addCalculation(value) {
     //if lastInput === "operator" && value === "opeartor" ==> return;
-    if (lastInput === "+" && value === "+" || lastInput === "-" && value === "-" ||lastInput === "*" && value === "*" || lastInput === "/" && value === "/" ){
+    if (lastInput === "+" && value === "+" || lastInput === "-" && value === "-" || lastInput === "*" && value === "*" || lastInput === "/" && value === "/") {
         return;
     }
-    if (lastInput === "+" && value === "-" ){
-        lastInput == value;
+    if (isNaN(lastInput) && isNaN(value) && lastInput !== "=") {
+        console.log("the last two are not numbers");
+        var lastElement = myArray.length - 1; 
+        console.log(myArray[lastElement]);
+        myArray[lastElement] = value;
+        console.log(myArray);
+        console.log(lastInput);
+        console.log(value);
+        lastInput = value;
+        value ="";  // ??????????????????????????????????????????????????????????????????????????
+                    // This part works when I empty the value here but I need to pass the value to lastInput later.... 
     }
-    if(myArray.length === 0 && numberString === "" &&  (value === "+" || value === "-" || value === "*" || value === "/")) {
+    if (myArray.length === 0 && numberString === "" && (value === "+" || value === "-" || value === "*" || value === "/")) {
         alert("Please, begin the calculation with a number!");
         return;
     }
     var inputNumber = parseInt(value);
     document.getElementById('calculation').value = "";
     if (lastInput === "/" && value === 0) {
-        myAlert();
+        alert("Division by 0 not possible");
         return;
     }
     if (lastInput === "=" && !isNaN(inputNumber)) {
@@ -65,19 +74,21 @@ function addCalculation(value) {
         myArray = [];
         myArray.push(result);
         document.getElementById('result').value = result;
+        console.log(myArray);
     }
     lastInput = value;
     if (!isNaN(inputNumber)) { // if it's a number
-        numberString += inputNumber; //it adds every input number to the numberstring
+        numberString += inputNumber; // it adds every input number to the numberstring
     } else if (value === '+-') {
-        if(numberString !== "")
+        if (numberString !== "")
             myArray.push(numberString); // numberString (just the numbers) are pushed into the array
         console.log(numberString);
         numberString = "";
         inputString = "";
+        console.log(myArray);
         for (let i = 0; i < myArray.length; i++) {
             inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); //printn to the console
+            console.log(inputString); // print to the console
         }
     } else {
         inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
@@ -88,7 +99,7 @@ function addCalculation(value) {
 
         for (let i = 0; i < myArray.length; i++) {
             inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); //printn to the console
+            console.log(inputString); // print to the console
         }
     }
     document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
@@ -96,10 +107,6 @@ function addCalculation(value) {
     if (numberString !== "") { // 9 If numberString is not empty...
         document.getElementById('calculation').value += numberString; // 778 + 45 + >>>>> 9 <<<<<<   ...then add that also to the calculation field of the calculator
     }
-
-}
-function myAlert() {
-    alert("Division by 0 not possible");
 }
 function solveCalculation() {
     addCalculation('='); // 
@@ -146,15 +153,10 @@ function negativeNumber() {
         document.getElementById('calculation').value = inputString; // displays inputString in the calculation text field
     }
 }
-/*function replaceOperator(){
-    var lastOperator = myArray.length - 1;
-    var newOperator = myArray[lastElement]
-
-}*/
 
 /***********************************
  * ONLINE VERSCHLÜSSELUNGSTOOL
- ***********************************/
+***********************************/
 
 
 /***********************************
