@@ -35,7 +35,6 @@
             grid-column: span 1;
             justify-self: center;
         }
-
         .item4 {
             grid-column: span 1;
             justify-self: center;
@@ -49,10 +48,10 @@
         <div class="box item1">
             <h1>Online Encrypting Tool</h1>
         </div>
-        <div class="box item2"><textarea onkeyup="codeMessage(), encrypt()" id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div><br>
+        <div class="box item2"><textarea onkeyup="codeMessage(true)" id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div><br>
         <div class="box item3"><label for="quantity">Shift</label><br>
-            <input type="number" onclick="selectOffset()" id="offset" name="offset" min="1" max="25" value="1"></div>
-        <div class="box item4"> <textarea id="coded" name="coded" rows="4" cols="50" placeholder="encrypted"></textarea></div>
+            <input type="number" click="" onblur="selectOffset(), codeMessage(false)" id="offset" name="offset" min="1" max="25" value="1"></div>
+        <div class="box item4"> <textarea onkeyup="codeMessage(), encrypt()" id="coded" name="coded" rows="4" cols="50" placeholder="encrypted"></textarea></div>
     </div>
 
 </body>
