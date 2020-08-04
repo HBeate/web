@@ -29,10 +29,6 @@ function clickLogin() {
 }
 /***********************************
  * CALCULATOR
- * /0                                           DONE
- * +- change                                    DONE
- * +-/* at the beginning                        DONE
- * 9//////3                                     DONE (same operator) - when they are the exact same operator
  ***********************************/
 var myArray = [];
 var inputString = "";
@@ -40,21 +36,13 @@ var numberString = "";
 var lastInput = "";
 
 function addCalculation(value) {
-    //if lastInput === "operator" && value === "opeartor" ==> return;
-    if (lastInput === "+" && value === "+" || lastInput === "-" && value === "-" || lastInput === "*" && value === "*" || lastInput === "/" && value === "/") {
-        return;
-    }
+
     if (isNaN(lastInput) && isNaN(value) && lastInput !== "=") {
         console.log("the last two are not numbers");
-        var lastElement = myArray.length - 1; 
-        console.log(myArray[lastElement]);
+        var lastElement = myArray.length - 1;
         myArray[lastElement] = value;
-        console.log(myArray);
-        console.log(lastInput);
-        console.log(value);
         lastInput = value;
-        value ="";  // ??????????????????????????????????????????????????????????????????????????
-                    // This part works when I empty the value here but I need to pass the value to lastInput later.... 
+        value = "";  
     }
     if (myArray.length === 0 && numberString === "" && (value === "+" || value === "-" || value === "*" || value === "/")) {
         alert("Please, begin the calculation with a number!");
@@ -74,32 +62,30 @@ function addCalculation(value) {
         myArray = [];
         myArray.push(result);
         document.getElementById('result').value = result;
-        console.log(myArray);
     }
-    lastInput = value;
+    if(value !== "")
+        lastInput = value;
+
     if (!isNaN(inputNumber)) { // if it's a number
         numberString += inputNumber; // it adds every input number to the numberstring
     } else if (value === '+-') {
         if (numberString !== "")
             myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-        console.log(numberString);
         numberString = "";
         inputString = "";
-        console.log(myArray);
         for (let i = 0; i < myArray.length; i++) {
             inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); // print to the console
         }
     } else {
         inputString = ""; //  inputString (the one that goes into the field of the calculator) is emptied
-        myArray.push(numberString); // numberString (just the numbers) are pushed into the array
-        if (value !== "=")  // if all other input (+-*/) isn't an = then.... 
+        if(numberString !== "")
+            myArray.push(numberString); // numberString (just the numbers) are pushed into the array
+        if (value !== "=" && value !== "")  // if all other input (+-*/) isn't an = then.... 
             myArray.push(value);  // push the logical operator to the array
         numberString = "";  // empty the numberString to get it ready for the next round
 
         for (let i = 0; i < myArray.length; i++) {
             inputString += myArray[i]; // the empty inputString is filled with all the data from the array
-            console.log(inputString); // print to the console
         }
     }
     document.getElementById('calculation').value = inputString;    // inputString (everything form the array) is put into the calculation field of the calculator
@@ -143,7 +129,6 @@ function negativeNumber() {
             newValue = newValue * (-1); // switches sign of a number and stores it in newValue
             myArray[lastElement] = newValue; // repalces the last element of the array with newValue
         }
-        console.log(myArray); // writes it onto the console
         inputString = ""; // clears inputString -> so that it can be filled with the data of the array
 
         for (let i = 0; i < myArray.length; i++) { // fills inputString with the data from the array
@@ -157,8 +142,69 @@ function negativeNumber() {
 /***********************************
  * ONLINE VERSCHLÜSSELUNGSTOOL
 ***********************************/
+var originalMessage = "";
+var encryptedMessage = "";
+var myMessage = "";
+messageArray = [];
 
+function selectOffset() {
+    var offset = document.getElementById('offset').value;
+    console.log(offset);
 
+}
+function codeMessage() {
+    var decoded = document.getElementById('decoded').value;
+    //    var coded = document.getElementById('coded').value;
+    //    console.log(decoded);
+    for (let i = 0; i < decoded.length; i++) {
+        var myChar = decoded.charAt(i);
+        // TODO check here for Umlaute with Switch
+        myMessage = myMessage + myChar;
+
+    }
+    console.log("message " + myMessage);
+    messageArray.push(myChar);  // here the individual character is an item in the array !!! TODO add delete option !!!
+    //   messageArray = [];
+    //   messageArray.push(myMessage);   // here the string is one singel entry in the array
+    myMessage = "";
+    myChar = "";
+    console.log("Array " + messageArray);
+    // TODO convert to upper case????
+    document.getElementById('coded').value = decoded;
+    //  originalMessage.value = encryptedMessage.value ;
+    var offset = document.getElementById('offset').value;
+    console.log(offset);
+    encrypt();
+}
+function encrypt(offset) {
+    var myNewMessage = "";
+    var decrypt = "";
+
+    for (let i = 0; i < myMessage.length; i++) {
+        var myChar = myMessage.charAt(i);
+        switch (myChar) {
+            case '!':
+            case '?':
+            case '.':
+            case ',':
+            case ';':
+            case '-':
+            case '(':
+            case ')':
+                myNewMessage = myNewMessage + myChar;       //Diese Sonderzeichen werden nicht verschlüsselt
+                break;
+            default:
+                if (decrypt) {
+                    mychar -= offset;
+                } else {                         // rutscht im ASCII code um zwei Stellen weiter
+                    mychar += offset;
+                }
+                myNewMessage = myNewMessage + mychar;
+        }    document.getElementById('coded').value = myNewMessage;
+    }
+
+}
 /***********************************
 * TO-DO APP
 ***********************************/
+
