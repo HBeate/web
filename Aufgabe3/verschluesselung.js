@@ -24,7 +24,7 @@ function codeMessage(isDecode) {
         var offset = document.getElementById('offset').value;
         for (let i = 0; i < decoded.length; i++) {
             let myChar = decoded.charAt(i);
-            messageArray.push(myChar);  // here the individual character is an item in the array !!! TODO add delete option !!!
+            messageArray.push(myChar);   
         }
         console.log("Array " + messageArray);
 
