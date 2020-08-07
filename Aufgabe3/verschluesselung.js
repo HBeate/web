@@ -4,9 +4,9 @@
 ***********************************/
 //var originalMessage = "";
 //var encryptedMessage = "";
-var myMessage = "";
 var isDecode = true;
 messageArray = [];
+var myNewMessage = "";
 
 
 function selectOffset() {
@@ -14,42 +14,36 @@ function selectOffset() {
     console.log(offset);
 }
 // you'll do it!!!!  ----- I guess I won't fucking do it...
-function codeMessage(newLetter, isDecode) {
+function codeMessage(isDecode) {
     this.isDecode = isDecode;
     var decoded = document.getElementById(!this.isDecode ? 'decoded' : 'coded').value;
+    var newLetter = decoded !== myNewMessage;
 
-    if(decoded === "")  // catches Shift-key (e.g. capital letters), so it won't be seen as a keyup
+    if (decoded === "")  // catches Shift-key (e.g. capital letters), so it won't be seen as a keyup
         return;
-    var offset = document.getElementById('offset').value;
-
-    for (let i = 0; i < decoded.length; i++) {
-        var myChar = decoded.charAt(i);
-        myMessage = myMessage + myChar;
-    }
-    console.log("message " + myMessage);
-    if (newLetter)
-        messageArray.push(myChar);  // here the individual character is an item in the array !!! TODO add delete option !!!
-    else {
+    if (newLetter) {
         messageArray = [];
+        var offset = document.getElementById('offset').value;
+        for (let i = 0; i < decoded.length; i++) {
+            let myChar = decoded.charAt(i);
+            messageArray.push(myChar);  // here the individual character is an item in the array !!! TODO add delete option !!!
+        }
+        console.log("Array " + messageArray);
+
+        document.getElementById(this.isDecode ? 'coded' : 'decoded').value = decoded;
+        encrypt(offset);
+    } else {
+        messageArray = [];
+        myNewMessage = "";
         for (let i = 0; i < decoded.length; i++) {
             messageArray.push(decoded.charAt(i));
             encrypt(offset);
         }
     }
-
-    myMessage = "";
-    myChar = "";
-    console.log("Array " + messageArray);
-
-    if (newLetter)
-        document.getElementById(this.isDecode ? 'coded' : 'decoded').value = decoded;
-
-    if (newLetter)
-        encrypt(offset);
 }
 function encrypt(offset) {
     offset = parseInt(offset);
-    var myNewMessage = "";
+
     var toEncrypt = messageArray[messageArray.length - 1];
     switch (toEncrypt) {
         case '!':
@@ -67,17 +61,20 @@ function encrypt(offset) {
             }
             break;
         default:
-            if (isDecode) {
-                messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) - offset);
-            } else {                         
-                messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) + offset);
-            }
             for (let i = 0; i < messageArray.length; i++) {
+                if (isDecode) {
+                    messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) - offset);
+                } else {
+                    messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) + offset);
+                }
                 myNewMessage = myNewMessage + messageArray[i];
             }
+/*            for (let i = 0; i < messageArray.length; i++) {
+                myNewMessage = myNewMessage + messageArray[i];
+            }*/
     } /*   if (isDecode) {
         document.getElementById(this.isDecode ? 'decoded' : 'coded').value = myNewMessage;
     } else {*/
-        document.getElementById(!this.isDecode ?'coded' : 'decoded').value = myNewMessage;
+    document.getElementById(!this.isDecode ? 'coded' : 'decoded').value = myNewMessage;
     //}
 }
