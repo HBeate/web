@@ -8,10 +8,18 @@ var myMessage = "";
 var isDecode = true;
 messageArray = [];
 
-// you'll do it!!!!
+
+function selectOffset() {
+    var offset = document.getElementById('offset').value;
+    console.log(offset);
+}
+// you'll do it!!!!  ----- I guess I won't fucking do it...
 function codeMessage(newLetter, isDecode) {
     this.isDecode = isDecode;
-    var decoded = document.getElementById(this.isDecode ? 'decoded' : 'coded').value;
+    var decoded = document.getElementById(!this.isDecode ? 'decoded' : 'coded').value;
+
+    if(decoded === "")  // catches Shift-key (e.g. capital letters), so it won't be seen as a keyup
+        return;
     var offset = document.getElementById('offset').value;
 
     for (let i = 0; i < decoded.length; i++) {
@@ -42,7 +50,6 @@ function codeMessage(newLetter, isDecode) {
 function encrypt(offset) {
     offset = parseInt(offset);
     var myNewMessage = "";
-    var decrypt = false;
     var toEncrypt = messageArray[messageArray.length - 1];
     switch (toEncrypt) {
         case '!':
@@ -60,7 +67,7 @@ function encrypt(offset) {
             }
             break;
         default:
-            if (decrypt) {
+            if (isDecode) {
                 messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) - offset);
             } else {                         
                 messageArray[messageArray.length - 1] = String.fromCharCode(toEncrypt.charCodeAt(0) + offset);
@@ -68,9 +75,9 @@ function encrypt(offset) {
             for (let i = 0; i < messageArray.length; i++) {
                 myNewMessage = myNewMessage + messageArray[i];
             }
-    }    if (decrypt) {
+    } /*   if (isDecode) {
         document.getElementById(this.isDecode ? 'decoded' : 'coded').value = myNewMessage;
-    } else {
-        document.getElementById(this.isDecode ?'coded' : 'decode').value = myNewMessage;
-    }
+    } else {*/
+        document.getElementById(!this.isDecode ?'coded' : 'decoded').value = myNewMessage;
+    //}
 }
