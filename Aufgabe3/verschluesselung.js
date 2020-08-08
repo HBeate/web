@@ -54,6 +54,7 @@ function encrypt(offset) {
         }
     }
     document.getElementById(!this.isDecode ? 'coded' : 'decoded').value = myNewMessage;
+    myNewMessage= "";
 }
 
 function ClearFields() {

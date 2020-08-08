@@ -47,11 +47,11 @@
     <div class="container">
         <div class="box item1">
             <h1>Online Encrypting Tool</h1>
-            <h3>Choose the shift first and then enter the unencrypted or encryptet text in the according text field.</h3>
+            <h3>Enter the unencrypted or encryptet text into the according text field and select the shift.</h3>
         </div>
-        <div class="box item2"><textarea onblur="codeMessage(false)" id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div>
+        <div class="box item2"><textarea onkeyup="codeMessage(false)" id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div>
         <div class="box item3"><label for="quantity">Shift</label><br>
-            <input type="number" click="" onblur="selectOffset(), codeMessage(false)" id="offset" name="offset" min="1" max="25" value="1"><br>
+            <input type="number" click="" onclick="selectOffset(), codeMessage(false)" id="offset" name="offset" min="1" max="25" value="1"><br>
         <br><button type="button" onclick="ClearFields();">Clear</button></div>
         <div class="box item4"><textarea onblur="codeMessage(true)" id="coded" name="coded" rows="4" cols="50" placeholder="encrypted"></textarea></div>
     </div>
