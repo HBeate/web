@@ -1,6 +1,6 @@
 
 /***********************************
- * ONLINE VERSCHLÜSSELUNGSTOOL
+ * ONLINE VERSCHLÜSSELUNGSTOOL 
 ***********************************/
 
 var isDecode = true;
@@ -17,8 +17,8 @@ function codeMessage(isDecode) {
     var decoded = document.getElementById(!this.isDecode ? 'decoded' : 'coded').value;
     var newLetter = decoded !== myNewMessage;
 
-    if (decoded === "")  // catches Shift-key (e.g. capital letters), so it won't be seen as a keyup
-        return;
+ /*   if (decoded === "")  // catches Shift-key (e.g. capital letters), so it won't be seen as a keyup
+        return;*/
     if (newLetter) {
         messageArray = [];
         var offset = document.getElementById('offset').value;
@@ -39,6 +39,7 @@ function codeMessage(isDecode) {
         }
     }
 }
+
 function encrypt(offset) {
     offset = parseInt(offset);
     var toEncrypt = "";
@@ -51,10 +52,13 @@ function encrypt(offset) {
             messageArray[i] = String.fromCharCode(toEncrypt.charCodeAt(i) + offset);
             myNewMessage = myNewMessage + messageArray[i];
         }
-
     }
-
-
     document.getElementById(!this.isDecode ? 'coded' : 'decoded').value = myNewMessage;
 }
 
+function ClearFields() {
+
+    document.getElementById("decoded").value = "";
+    document.getElementById("coded").value = "";
+    myNewMessage="";
+}
