@@ -36,15 +36,14 @@ function addToDo() {
         var cell2 = row.insertCell(1);
         cell1.innerHTML = toDoArray[i];
         var button = document.createElement("button");
-        button.id = toDoArray.indexOf(i);
         button.innerHTML = "X";
 
         button.onclick = function () {
             delete toDoArray[i];
             filterArray();
-
             console.log("Array after deleting a row: " + toDoArray);
-            document.getElementById("myTable").deleteRow(i);
+            deleteRow(this);
+
             numberToDos();
         };
         cell2.appendChild(button);
@@ -53,18 +52,22 @@ function addToDo() {
 }
 
 
-function filterArray(){
+function filterArray() {
     var filtered = toDoArray.filter(function (el) {
         return el != null;
-      });
-      
-      console.log(filtered);
-      toDoArray = [];
-      toDoArray = filtered;
-      console.log("Array after filterArray: " + toDoArray);
+    });
+
+    console.log(filtered);
+    toDoArray = [];
+    toDoArray = filtered;
+    console.log("Array after filterArray: " + toDoArray);
+}
+function deleteRow(row) {
+    var x = row.parentNode.parentNode.rowIndex;
+    document.getElementById("myTable").deleteRow(x);
 }
 function clearTable() {
-    
+
     for (let i = toDoArray.length - 1; i >= 0; i--) {
         document.getElementById("myTable").deleteRow(i);
     }
@@ -79,8 +82,8 @@ function deleteAllRows() {
 
 function numberToDos() {
     var rowLength = document.getElementById("myTable").rows.length;
-    document.getElementById("heading").innerHTML = "You have " + rowLength +" to-dos";
-  }
+    document.getElementById("heading").innerHTML = "You have " + rowLength + " to-dos";
+}
 
 /* function clearTable() {
     var x = document.getElementById("myTable").rows.length;
