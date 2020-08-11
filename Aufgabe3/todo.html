@@ -5,17 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        +
+    </style>
     <link a href="./style3.css" type="text/css" rel="stylesheet">
     <script src="./todo.js"></script>
 </head>
 
 <body>
-    <h1>To-Do-List</h1>
-    <label for="usrname">User name:</label>
-    <input type="text" id="usrname" name="usrname" ><br><br>
-    <label for="pw">Password:</label>
-    <input type="text" id="pw" name="pw"><br><br>
-    <button type="button" onclick="clickLogin()">Login</button>
+    <h1>To-Do-List</h1><br><br>
+
+    <table>
+        <tr>
+            <td style="text-align: center" colspan="2">Tasks</td>
+        </tr>
+    </table>
+    <table id="myTable">
+
+    </table><br>
+    <input type="text" id="newToDo" name="newToDo" autofocus><button id="submitBtn" onclick="addToDo()">submit</button>
+    
+    <button onclick="deleteAllRows()">delete all rows</button>
 </body>
 
 </html>
