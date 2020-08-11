@@ -2,11 +2,9 @@
 /***********************************
 * TO-DO APP
 ***********************************/
-
+isFiltered = false;
 toDoArray = [];
 
-// TODO - Why dosen't this work = because the JS part got loaded before the HTML did
-// FIX: put the todo.js file at the end of the HTML body and it works!
 var input = document.getElementById("newToDo");
 input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
@@ -24,6 +22,7 @@ function addToDo() {
     if (toDoArray !== "") {
         clearTable();
     }
+
     toDoArray.push(newToDo);
 
     console.log("Array: " + toDoArray);
@@ -36,23 +35,64 @@ function addToDo() {
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         cell1.innerHTML = toDoArray[i];
-        cell2.innerHTML = "X";
+        var button = document.createElement("button");
+        button.id = toDoArray.indexOf(i);
+        button.innerHTML = "X";
+
+        button.onclick = function () {
+            delete toDoArray[i];
+            filterArray();
+
+            console.log("Array after deleting a row: " + toDoArray);
+            document.getElementById("myTable").deleteRow(i);
+            numberToDos();
+        };
+        cell2.appendChild(button);
+        numberToDos();
     }
 }
 
+
+function filterArray(){
+    var filtered = toDoArray.filter(function (el) {
+        return el != null;
+      });
+      
+      console.log(filtered);
+      toDoArray = [];
+      toDoArray = filtered;
+      console.log("Array after filterArray: " + toDoArray);
+}
 function clearTable() {
+    
     for (let i = toDoArray.length - 1; i >= 0; i--) {
-        document.getElementById("myTable").deleteRow(i);      
+        document.getElementById("myTable").deleteRow(i);
     }
 }
+
 function deleteAllRows() {
     for (let i = toDoArray.length - 1; i >= 0; i--) {
-        document.getElementById("myTable").deleteRow(i);      
+        document.getElementById("myTable").deleteRow(i);
         toDoArray = [];
     }
 }
-// TODO - try using this when you are deleting a specific row in the To-Do List
-function deleteSpecificRow(delRow) {
-    var i = delRow.parentNode.parentNode.rowIndex;
-    document.getElementById("myTable").deleteSpecificRow(i);
-}
+
+function numberToDos() {
+    var rowLength = document.getElementById("myTable").rows.length;
+    document.getElementById("heading").innerHTML = "You have " + rowLength +" to-dos";
+  }
+
+/* function clearTable() {
+    var x = document.getElementById("myTable").rows.length;
+    for (let i = x; i > 0; i--) {
+        document.getElementById("myTable").deleteRow(i);
+    }
+}*/
+
+/* function deleteAllRows() {
+    var x = document.getElementById("myTable").rows.length;
+    for (let i = x; i > 0; i--) {
+        document.getElementById("myTable").deleteRow(i);
+        toDoArray = [];
+    }
+}*/

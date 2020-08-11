@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        +
+        
     </style>
     <link a href="./style3.css" type="text/css" rel="stylesheet">
 
@@ -14,18 +14,13 @@
 
 <body>
     <h1>To-Do-List</h1><br><br>
-
-    <table>
-        <tr>
-            <td style="text-align: center" colspan="2">Tasks</td>
-        </tr>
-    </table>
+    <h3 id="heading">You have no to-dos</h3>
     <table id="myTable">
 
     </table><br>
     <input type="text" id="newToDo" name="newToDo" autofocus><button id="submitBtn" onclick="addToDo()">submit</button>
     
-    <button onclick="deleteAllRows()">delete all rows</button>
+    <br><br><button onclick="deleteAllRows()">delete all rows</button>
     <script src="./todo.js"></script>
 </body>
 
