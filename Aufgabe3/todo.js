@@ -65,9 +65,11 @@ function filterArray() {
 function deleteRow(row) {
     var x = row.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(x);
+    if (x==0){
+        toDoArray=[];
+    }
 }
 function clearTable() {
-
     for (let i = toDoArray.length - 1; i >= 0; i--) {
         document.getElementById("myTable").deleteRow(i);
     }
@@ -85,17 +87,4 @@ function numberToDos() {
     document.getElementById("heading").innerHTML = "You have " + rowLength + " to-dos";
 }
 
-/* function clearTable() {
-    var x = document.getElementById("myTable").rows.length;
-    for (let i = x; i > 0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-    }
-}*/
 
-/* function deleteAllRows() {
-    var x = document.getElementById("myTable").rows.length;
-    for (let i = x; i > 0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-        toDoArray = [];
-    }
-}*/
