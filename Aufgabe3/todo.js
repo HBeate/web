@@ -79,6 +79,7 @@ function deleteAllRows() {
     for (let i = toDoArray.length - 1; i >= 0; i--) {
         document.getElementById("myTable").deleteRow(i);
         toDoArray = [];
+        numberToDos();
     }
 }
 
