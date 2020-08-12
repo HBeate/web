@@ -34,7 +34,13 @@ function addToDo() {
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        cell1.innerHTML = toDoArray[i];
+        var cell3 = row.insertCell(2);
+
+        var myCheckbox = document.createElement("INPUT");
+        myCheckbox.setAttribute("type", "checkbox");
+        cell1.appendChild(myCheckbox);
+
+        cell2.innerHTML = toDoArray[i];
         var button = document.createElement("button");
         button.innerHTML = "X";
 
@@ -46,7 +52,7 @@ function addToDo() {
 
             numberToDos();
         };
-        cell2.appendChild(button);
+        cell3.appendChild(button);
         numberToDos();
     }
 }
@@ -65,8 +71,9 @@ function filterArray() {
 function deleteRow(row) {
     var x = row.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(x);
-    if (x==0){
-        toDoArray=[];
+    var rowLength = document.getElementById("myTable").rows.length;
+    if (rowLength == 1 & x == 0) {
+        toDoArray = [];
     }
 }
 function clearTable() {
