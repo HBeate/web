@@ -1,34 +1,35 @@
 
 /***********************************
-* TO-DO APP
+* TO-DO APP 
 ***********************************/
-isFiltered = false;
-toDoArray = [];
 
-var input = document.getElementById("newToDo");
-input.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("submitBtn").click();
-    }
-});
+/*
+https://www.google.com/search?q=create+javascript+object+from+input&oq=create+javascript+object+from+input&aqs=chrome..69i57j0l2.8348j0j4&sourceid=chrome&ie=UTF-8#kpvalbx=_c4E0X8WgOsa4kwWm8IWABQ25
+*/
+let tasks = [];
+var isActive = false;
+var rowLength = "";
 
-function addToDo() {
-    var newToDo = document.getElementById('newToDo').value;
-    if (newToDo == "") {
+const addTask = (ev) => {
+    ev.preventDefault();  // to stop the form submitting
+    if (document.getElementById("newToDo").value === "") {
         return;
-    }
+    } 
 
-    if (toDoArray !== "") {
+    if (tasks !== "") {
         clearTable();
     }
+    
+    let task = {
+        id: Date.now(),
+        name: document.getElementById("newToDo").id,
+        toDo: document.getElementById("newToDo").value,
+    }
 
-    toDoArray.push(newToDo);
+        tasks.push(task)
+        document.getElementById('newToDo').value = ""; 
 
-    console.log("Array: " + toDoArray);
-    document.getElementById('newToDo').value = "";
-
-    for (let i = 0; i < toDoArray.length; i++) {
+    for (let i = 0; i < tasks.length; i++) {
 
         var table = document.getElementById("myTable");
         var row = table.insertRow(i);
@@ -40,59 +41,75 @@ function addToDo() {
         myCheckbox.setAttribute("type", "checkbox");
         cell1.appendChild(myCheckbox);
 
-        cell2.innerHTML = toDoArray[i];
-        var button = document.createElement("button");
-        button.innerHTML = "X";
+        cell2.innerHTML = tasks[i].toDo;
+        var xButton = document.createElement("button");
+        xButton.innerHTML = "X";
 
-        button.onclick = function () {
-            delete toDoArray[i];
+        xButton.onclick = function () {
+            delete tasks[i];
             filterArray();
-            console.log("Array after deleting a row: " + toDoArray);
+            console.log("Array after deleting a row: " + tasks);
             deleteRow(this);
 
-            numberToDos();
+                       numberToDos();
         };
-        cell3.appendChild(button);
-        numberToDos();
+        cell3.appendChild(xButton);
+               numberToDos();
     }
 }
+document.addEventListener('DOMContentLoaded', () => { // calls the event when the button is clicked
+    document.getElementById('submitBtn').addEventListener('click', addTask);
+});
+var input = document.getElementById("newToDo"); // ENTER key also calls the 
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("submitBtn").click();
 
+    }
+});
+
+
+function emptyToDo() {
+
+}
 
 function filterArray() {
-    var filtered = toDoArray.filter(function (el) {
-        return el != null;
+    var filtered = tasks.filter(function (newToDo) {
+        return newToDo != null;
     });
 
     console.log(filtered);
-    toDoArray = [];
-    toDoArray = filtered;
-    console.log("Array after filterArray: " + toDoArray);
+    tasks = [];
+    tasks = filtered;
+    console.log("Array after filterArray: " + tasks);
 }
-function deleteRow(row) {
-    var x = row.parentNode.parentNode.rowIndex;
-    document.getElementById("myTable").deleteRow(x);
-    var rowLength = document.getElementById("myTable").rows.length;
-    if (rowLength == 1 & x == 0) {
-        toDoArray = [];
-    }
-}
+
 function clearTable() {
-    for (let i = toDoArray.length - 1; i >= 0; i--) {
+    for (let i = tasks.length - 1; i >= 0; i--) {
         document.getElementById("myTable").deleteRow(i);
     }
 }
 
-function deleteAllRows() {
-    for (let i = toDoArray.length - 1; i >= 0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-        toDoArray = [];
-        numberToDos();
+function deleteRow(row) {
+    var x = row.parentNode.parentNode.rowIndex;
+    document.getElementById("myTable").deleteRow(x);
+    rowLength = document.getElementById("myTable").rows.length;
+    if (rowLength == 1 & x == 0) {
+        tasks = [];
     }
 }
 
 function numberToDos() {
-    var rowLength = document.getElementById("myTable").rows.length;
+    rowLength = document.getElementById("myTable").rows.length;
     document.getElementById("heading").innerHTML = "You have " + rowLength + " to-dos";
 }
 
+function deleteAllRows() {
+    for (let i = tasks.length - 1; i >= 0; i--) {
+        document.getElementById("myTable").deleteRow(i);
+        tasks = [];
+        numberToDos();
+    }
+}
 
