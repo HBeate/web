@@ -1,10 +1,8 @@
 /***********************************
 * TO-DO APP - without Array
 ***********************************/
-isFiltered = false;
-toDoArray = [];
+
 var rowLength = "";
-var isActive = true;
 var input = document.getElementById("newToDo");
 input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
@@ -19,16 +17,7 @@ function addToDo() {
         return;
     }
 
-    if (toDoArray !== "") {
-        clearTable();
-    }
-
-    toDoArray.push(newToDo);
-
-    console.log("Array: " + toDoArray);
     document.getElementById('newToDo').value = "";
-
- //   for (let i = 0; i < toDoArray.length; i++) {
 
         var table = document.getElementById("myTable");
         rowLength = document.getElementById("myTable").rows.length;
@@ -46,29 +35,14 @@ function addToDo() {
         button.innerHTML = "X";
 
         button.onclick = function () {
-            delete toDoArray[i];
-            filterArray();
-            console.log("Array after deleting a row: " + toDoArray);
             deleteRow(this);
-
             numberToDos();
         };
         cell3.appendChild(button);
         numberToDos();
-  //  }
 }
 
 
-function filterArray() {
-    var filtered = toDoArray.filter(function (el) {
-        return el != null;
-    });
-
-    console.log(filtered);
-    toDoArray = [];
-    toDoArray = filtered;
-    console.log("Array after filterArray: " + toDoArray);
-}
 function deleteRow(row) {
     var x = row.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(x);
@@ -77,18 +51,10 @@ function deleteRow(row) {
         toDoArray = [];
     }
 }
-function clearTable() {
-    for (let i = toDoArray.length - 1; i >= 0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-    }
-}
 
-function deleteAllRows() {
-    for (let i = toDoArray.length - 1; i >= 0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-        toDoArray = [];
-        numberToDos();
-    }
+function clearTable() {
+myTable.innerHTML = "";
+numberToDos();
 }
 
 function numberToDos() {

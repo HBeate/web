@@ -7,7 +7,7 @@ let tasks = [];
 var isChecked = false;
 var rowLength = "";
 var id = 1;
-var myCheckbox ="";
+var myCheckbox = "";
 
 const addTask = (event) => {
     event.preventDefault();  // to stop the form submitting
@@ -46,17 +46,14 @@ const addTask = (event) => {
         myCheckbox = document.createElement("INPUT");
         myCheckbox.setAttribute("type", "checkbox");
         myCheckbox.id = task.id;
+
+        myCheckbox.onclick = function () {
+            //        HIER BEKOMME ICH DIE FEHLERMELDUNG: Cannot read property 'checked' of undefined
+            var x = document.getElementById("myTable").myCheckbox.checked;
+            console.log("the checkbox " + tasks[i].id + " is " + tasks[i].isChecked)
+        }
         console.log("Checkbox ID: " + myCheckbox.id);
         cell1.appendChild(myCheckbox);
-
-  /*      myCheckbox.onclick = function () {
-
-            var x = document.getElementById("myTable").myCheckbox.checked;
-            tasks[i].isChecked = x;
-
-            console.log("the checkbox " + tasks[i].id + " is " + tasks[i].isChecked)
-        } */
-
         cell2.innerHTML = tasks[i].toDo;
         var xButton = document.createElement("button");
         xButton.innerHTML = "X";
