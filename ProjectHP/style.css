@@ -1,0 +1,124 @@
+*{
+    font-size: 14px;
+    --font-size-big: 1.5rem;
+    --font-size-medium: 1.3rem;
+    --font-size-normal:1rem;
+    --font-size-small: 0.3rem;
+    --red-color: rgb(204, 42, 42);
+    --black-color: white;
+    --nav-bg-color: white
+    ;
+}
+
+html { font-size: calc(1em + 1vw) }
+body{
+    margin: 0;
+    background: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-weight:300;
+    font-size: var(--font-size-small);
+}
+/* .container {
+     width: 80%; 
+    margin: 0 auto;
+} */
+p{
+    padding: 20px 20px 20px 20px;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+  table, th, tr, td {
+      table-layout: auto;
+      border-collapse: collapse;
+      background-color: black;
+  }
+  th {
+      text-align: left;
+      vertical-align: middle;
+      background-color: #466995;
+  }
+  td {
+      text-align: center;
+    }
+
+.nav_link {
+    z-index: 10;
+    color: var(--red-color);
+    font-size: 12px;
+    font-weight: 300;
+
+    text-transform: uppercase;
+    display: inline;
+    padding: 0px 20px;
+    text-align: right;
+    z-index:1.5;
+}
+ul {
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+li {
+    list-style: none;
+}
+.nav.navbar-nav li a {
+    color: red;
+  }
+ 
+ .nav.navbar-nav a:hover {
+  color: blue;
+ }
+a {
+    text-decoration: none;
+    color: var(--red-color);
+    font-weight: 600;
+}
+a:hover {
+    color: var(--red-color)
+  }
+  a:active {
+
+}
+ a:visited {
+    color:var(--red-color);
+    text-decoration: underline;
+  }
+ a:link {
+    color: var(--red-color)
+ }
+
+
+header {
+    position: fixed;
+    background-color: var(--nav-bg-color);
+    width: 100%;
+    z-index: 1;
+    height:100px;
+}
+.kick_ludesch{
+    width: 45%;
+    padding-top:0px;
+}
+form{
+
+text-align: center;
+font-size: var(--font-size-small);
+}
+input, textarea{
+    width: 300px;
+}
+label{
+margin-bottom: 0;
+margin: 10px 0px 0px 0px;
+text-align: left;
+}
+.button{
+    width: 80px;
+}
+iframe{
+  padding: 20px;
+  text-align: center;
+}

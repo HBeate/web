@@ -3,11 +3,26 @@
 * TO-DO APP 
 ***********************************/
 
+/* if(localStorage.getItem('toDoList') == null){
+    var tasks =[];
+}else{
+    tasks =  JSON.parse(localStorage.getItem('toDoList'));
+   //-----------^parse the item by getting---^--stored item
+}
+
+function addItemToArray(){
+    tasks.push(document.getElementById("toDoList").value);
+    localStorage.setItem('toDoList', JSON.stringify(tasks));
+    //------------^store the item by stringify--^
+} */
+
+
 let tasks = [];
 var isChecked = false;
 var rowLength = "";
 var id = 1;
 var myCheckbox = "";
+
 
 const addTask = (event) => {
     event.preventDefault();  // to stop the form submitting
@@ -69,7 +84,7 @@ const addTask = (event) => {
         cell3.appendChild(xButton);
         numberToDos();
     }
-
+    storeTasks();
 }
 document.addEventListener('DOMContentLoaded', () => { // calls the event when the button is clicked
     document.getElementById('submitBtn').addEventListener('click', addTask);
@@ -98,6 +113,7 @@ function clearTable() {
     for (let i = rowLength - 1; i >= 0; i--) {
         document.getElementById("myTable").deleteRow(i);
     }
+
 }
 
 function numberToDos() {
@@ -113,6 +129,7 @@ function deleteRow(row) {
         tasks = [];
         id = 1;
     }
+
 }
 
 function deleteAllRows() {
@@ -122,6 +139,16 @@ function deleteAllRows() {
         numberToDos();
         id = 1;
     }
+
 }
 
+ function storeTasks() {
+    localStorage.setItem("toDoList", JSON.stringify(tasks));
 
+    /* var retrievedData = localStorage.getItem("toDoList");
+    console.log("storeTasks: " + retrievedData);
+    var tasks2 = JSON.parse(retrievedData);
+    console.log("storeTasks: " + tasks2);
+
+    alert(tasks2.length); */
+} 
