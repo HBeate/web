@@ -4,7 +4,6 @@
 ***********************************/
 
 let tasks = [];
-let tasks2 =[];
 var isChecked = "";
 var rowLength = "";
 var id = 1;
@@ -125,6 +124,7 @@ function deleteAllRows() {
         numberToDos();
         id = 1;
     }
+
 }
 // tasks auf localStorage speichern
 function storeTasks() {
@@ -166,6 +166,13 @@ clearTable();
         xButton.innerHTML = "X";
         cell3.appendChild(xButton);
         numberToDos();
+    }
+    myCheckbox.onclick = function (row) {
+        var y = row.parentNode.parentNode.rowIndex;
+        document.getElementById("myTable").id(y);
+        var x = table.rows[y].cells[0].getElementsByTagName("input")[0].checked
+        tasks[y].isChecked = x;
+        console.log(tasks);
     }
 }
 
