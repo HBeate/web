@@ -174,13 +174,6 @@ function rebuildTable() {
         myCheckbox.addEventListener("onclick", myFunction(myCheckbox, tasks));
     }
 
-
-/*     myCheckbox.onclick = nction () {
-        var table = documentetElementById("myTable");
-/* var row = table.rows[inde;
-console.log(row.id); 
-        checkBox(this);
-    } */
 }
 function myFunction(checkbox, tasks) {
 
@@ -191,24 +184,3 @@ function myFunction(checkbox, tasks) {
 tasks[cellId].isChecked = isChecked;
 console.log("cellID :" + cellId + " is checked: " + isChecked);
 }
-/* function checkBox(row) {
-    var y = row.parentNode.parentNode.rowIndex;
-    console.log("id??? " + document.getElementById("myTable").id)
-    document.getElementById("myTable").id(y);
-    var x = table.rows[y].cells[0].getElementsByTagName("input")[0].checked
-    tasks[y].isChecked = x;
-    console.log(tasks);
-    rebuildTable();
-} */
-/* if(localStorage.getItem('toDoList') == null){
-    var tasks =[];
-}else{
-    tasks =  JSON.parse(localStorage.getItem('toDoList'));
-   //-----------^parse the item by getting---^--stored item
-}
-
-function addItemToArray(){
-    tasks.push(document.getElementById("toDoList").value);
-    localStorage.setItem('toDoList', JSON.stringify(tasks));
-    //------------^store the item by stringify--^
-} */
