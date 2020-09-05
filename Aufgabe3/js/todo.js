@@ -21,7 +21,6 @@ const addTask = (event) => {
     }
 
     let task = {
-        //****************************************************** get a unique ID  */
         id: id,
         name: document.getElementById("newToDo").id,
         toDo: document.getElementById("newToDo").value,
@@ -32,7 +31,7 @@ const addTask = (event) => {
     tasks.push(task)
     document.getElementById('newToDo').value = "";
 
-    for (let i = 0; i < tasks.length; i++) { 
+    for (let i = 0; i < tasks.length; i++) {
 
         var table = document.getElementById("myTable");
         var row = table.insertRow(i);
@@ -65,10 +64,10 @@ const addTask = (event) => {
         }
     }
     storeTasks();
-        //  for display purposes only
-        console.warn('added', { tasks });
-        let pre = document.querySelector('#msg pre');
-        pre.textContent = '\n' + JSON.stringify(tasks, '\t', 2);
+    //  for display purposes only
+    console.warn('added', { tasks });
+    let pre = document.querySelector('#msg pre');
+    pre.textContent = '\n' + JSON.stringify(tasks, '\t', 2);
 }
 
 document.addEventListener('DOMContentLoaded', () => { // calls the event when the button is clicked
@@ -110,10 +109,8 @@ function deleteRow(row) {
     if (rowLength == 1 & x == 0) {
         tasks = [];
         id = 1;
-    }console.log(tasks);
-
-  rebuildTable();
-
+    } console.log(tasks);
+    rebuildTable();
 }
 
 // alles löschen, auch tasks Array
@@ -124,30 +121,31 @@ function deleteAllRows() {
         numberToDos();
         id = 1;
     }
-
 }
 // tasks auf localStorage speichern
 function storeTasks() {
     localStorage.setItem("toDoList", JSON.stringify(tasks));
-
-} 
+}
 //Daten von localStorage holen und Array füllen
-function addItemToArray(){
+function addItemToArray() {
     tasks = [];
- //   tasks.push(document.getElementById("toDoList").value);
- tasks =  JSON.parse(localStorage.getItem('toDoList'));
+    //   tasks.push(document.getElementById("toDoList").value);
+    tasks = JSON.parse(localStorage.getItem('toDoList'));
     localStorage.setItem('toDoList', JSON.stringify(tasks));
     //------------^store the item by stringify--^
+
+
+
 }
 
-function rebuildTable(){
-    tasks =  JSON.parse(localStorage.getItem('toDoList'));
-   //-----------^parse the item by getting---^--stored item
+function rebuildTable() {
+    tasks = JSON.parse(localStorage.getItem('toDoList'));
+    //-----------^parse the item by getting---^--stored item
 
-console.log(tasks)
-clearTable();
+    console.log(tasks)
+    clearTable();
 
-    for (let i = 0; i < tasks.length; i++) { 
+    for (let i = 0; i < tasks.length; i++) {
 
         var table = document.getElementById("myTable");
         var row = table.insertRow(i);
@@ -166,17 +164,42 @@ clearTable();
         xButton.innerHTML = "X";
         cell3.appendChild(xButton);
         numberToDos();
+
+        xButton.onclick = function () {
+            delete tasks[i];
+            filterArray();
+            deleteRow(this);
+            numberToDos();
+        };
+        myCheckbox.addEventListener("onclick", myFunction(myCheckbox, tasks));
     }
-    myCheckbox.onclick = function (row) {
-        var y = row.parentNode.parentNode.rowIndex;
-        document.getElementById("myTable").id(y);
-        var x = table.rows[y].cells[0].getElementsByTagName("input")[0].checked
-        tasks[y].isChecked = x;
-        console.log(tasks);
-    }
+
+
+/*     myCheckbox.onclick = nction () {
+        var table = documentetElementById("myTable");
+/* var row = table.rows[inde;
+console.log(row.id); 
+        checkBox(this);
+    } */
 }
+function myFunction(checkbox, tasks) {
 
-
+    console.log(tasks);
+    var cellId = checkbox.id;
+    var isChecked = checkbox.checked;
+    console.log("cellID: " + cellId);
+tasks[cellId].isChecked = isChecked;
+console.log("cellID :" + cellId + " is checked: " + isChecked);
+}
+/* function checkBox(row) {
+    var y = row.parentNode.parentNode.rowIndex;
+    console.log("id??? " + document.getElementById("myTable").id)
+    document.getElementById("myTable").id(y);
+    var x = table.rows[y].cells[0].getElementsByTagName("input")[0].checked
+    tasks[y].isChecked = x;
+    console.log(tasks);
+    rebuildTable();
+} */
 /* if(localStorage.getItem('toDoList') == null){
     var tasks =[];
 }else{
