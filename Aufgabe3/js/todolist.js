@@ -6,8 +6,9 @@ var task2 = { name: "schwimmen", isDone: true, responsible: "Alina" };
  */
 
 const tasks = [];
-console.log(tasks);
-printTaskList();
+let tasksFromLocalStorage ="";
+
+/* printTaskList(); */
 
 document.getElementById("addTask").addEventListener("click", function () {
     addTask();
@@ -34,51 +35,72 @@ function addTask() {
         document.getElementById("txtNewTask").value = "";
         document.getElementById("txtResponsible").value = "";
         document.getElementById("txtNewTask").focus();
-
-    }}
-    function printTaskList() {
-        document.getElementById("taskList").innerHTML = getHTMLTasks();
+        numberToDos();
+        console.log(tasksFromLocalStorage);
+        storeTasks();
     }
-    function markTask(element) {
-        let index = element.attributes["data-index"].value;
+}
 
-        let isChecked = element.checked;
-        tasks[index].isDone = isChecked;
-        printTaskList();
-    }
+function numberToDos() {
+    var nrTasks = tasks.length;
+    document.getElementById("nrTodos").innerHTML = "You have " + nrTasks + " to-dos";
+}
 
-    function deleteTask(element) {
-        let index = element.attributes["data-index"].value;
-        tasks.splice(index, 1);
-        printTaskList();
-        document.getElementById("txtNewTask").focus();
-    }
+function printTaskList() {
+    document.getElementById("taskList").innerHTML = getHTMLTasks();
+}
 
-    function getHTMLTasks() {
-        let html = "";
-        let index = 0;
+function markTask(element) {
+    let index = element.attributes["data-index"].value;
 
-        tasks.forEach(element => {
-            let checked = "";
-            if (element.isDone) {
-                checked = "checked";
-            }
-              html += "<li class='list-group-item'><input class='checkbox' onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/>" + "&nbsp" + element.name + "&nbsp" + element.responsible + "&nbsp"  + index + "&nbsp"   + "<div class='right'><button type='button'  onCLick='deleteTask(this)' name='button' data-index='" + index + "'>X</div></div></li>" /* an das HTML anhängen 
+    let isChecked = element.checked;
+    tasks[index].isDone = isChecked;
+    printTaskList();
+    storeTasks();
+}
 
+function deleteTask(element) {
+    let index = element.attributes["data-index"].value;
+    tasks.splice(index, 1);
+    printTaskList();
+    document.getElementById("txtNewTask").focus();
+    numberToDos();
+    storeTasks();
+}
 
-/*             html += "<tr><td><input  onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/></td><td>" + element.name + "</td><td>" + element.responsible + "</td>"  + index + "&nbsp"  + "<td><button type='button' onCLick='deleteTask(this)' name='button' data-index='" + index + "'>X</td></tr>" /* an das HTML anhängen 
+function getHTMLTasks() {
+    let html = "";
+    let index = 0;
 
-/*             <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */
+    tasks.forEach(element => {
+        let checked = "";
+        if (element.isDone) {
+            checked = "checked";
+        }
 
+        html += "<li class='list-group-item'><div class='d-flex '><div class='p-2 bd-highlight'><input class='checkbox' onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/></div>" + "<div class='p-2 flex-grow-1 bd-highlight'>" + element.name + "</div><div class='p-2 bd-highlight'>" + element.responsible + "</div><div class='p-2 bd-highlight'>"  /* + index  */ + "</div>" + "  <div class='p-2 bd-highlight'><button type='button'  onCLick='deleteTask(this)' name='button' class='btn btn-danger btn-primary btn-sm' data-index='" + index + "'>Delete</div></div></div></li>" /* an das HTML anhängen*/
+/* 
+        console.log(element); */
+        index++;
+    });
+    return html;
+}
 
-            /*         html += "<li><div class='checkBox'><input  onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/></div><div class='task'>" + element.name + "</div><div class='resposible'>" + element.responsible + "</div><div class='index'>" + index + "</div>" + "<div class='deleteButton'><button type='button' onCLick='deleteTask(this)' name='button' data-index='" + index + "'>X</div></li>" /* an das HTML anhängen */
+// tasks auf localStorage speichern
+function storeTasks() {
+    localStorage.setItem("toDoList", JSON.stringify(tasks));
+}
 
-            console.log(element);
-            index++;
-        });
-        return html;
-    }
+//Daten von localStorage holen und Array füllen
+function getStoredTasks() {
+    tasks = [];
+    //   tasks.push(document.getElementById("toDoList").value);
+     tasks = JSON.parse(localStorage.getItem('toDoList'));
+    localStorage.setItem('toDoList', JSON.stringify(tasks));
+    //------------^store the item by stringify--^
+}
+function deleteAllTasks(){
+    tasks.length=0;
+    numberToDos();
+    printTaskList();
+}

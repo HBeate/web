@@ -1,0 +1,25 @@
+.box {
+    padding: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto 100px auto;
+    /* auto auto auto -> werden automatisch aufgeteilt / % auch mögl, oder mischen */
+    grid-auto-rows: minmax(100px, auto);
+    column-gap: 2px;
+    row-gap: 2px
+}
+.item1{
+    grid-column: span 3;
+    justify-self: center;
+}
+
+.item2 .item3 .item4 .item5 {
+    grid-column: span 1;
+    justify-self: center;
+}
+.item5 {
+    grid-column: span 3;
+    justify-self: center;
+}

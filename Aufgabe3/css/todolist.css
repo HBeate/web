@@ -1,5 +1,5 @@
-body{
-   text-align:left; 
+body {
+    text-align: left;
 }
 
 ul {
@@ -7,36 +7,35 @@ ul {
 }
 
 li {
-/*     text-align: center; */
-/* }
-.container{
-/*     display: grid;
-    grid-template-rows: auto auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px; */
+    
+    /*     text-align: center; */
 }
-.right{
+.input{
+    align-items: center;
+}
+.right {
     float: right;
 }
-.container > div {
-/*     background-color: rgba(255, 255, 255, 0.8);
+.center {
+/*     margin: auto; */
+text-align: center;
+
+}
+.flex-container {
+    display: flex;
+}
+.flex-item > div {
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
-    font-size: 30px; */
-  }
-.checkBox{
-
+    font-size: 30px;
 }
-.task{
-/* tex-align: center; */
+.list-group-item{
+    padding: 0px;
 }
-.responsible{
-
+h5{
+    padding-bottom: 20px;
 }
-.index{
-
+.btn-delete-all {
+    margin-top: 20px;
 }
-.deleteButton{
-
-} 

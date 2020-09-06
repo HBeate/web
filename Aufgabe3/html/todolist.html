@@ -7,38 +7,32 @@
     <title>to-Do List - Neu</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-         <link href="../css/todolist.css" rel="stylesheet">
- 
+    <link href="../css/todolist.css" rel="stylesheet">
+
     <script src="../js/todolist.js" defer></script>
 
 </head>
 
 <body>
-    <div class="page-content page-container" id="page-content">
-        <div class="padding">
-            <div class="row container d-flex justify-content-center">
-                <div class="col-lg-12">
-                    <div class="card px-3">
-                        <div class="card-body">
-                            <h4 class="card-title">To-Do List</h4>
-                            
-                            <div class="list-wrapper">
-                                <ul id="taskList" class="list-group list-group-flush">
+    <div class="container">
+        <h2 class ="center">To-Do List</h2><br>
 
-                                </ul>
-                            <div id="control">
-                                <input type="text" id="txtNewTask" autofocus placeholder="Enter Task" />
-                                <input type="text" id="txtResponsible" placeholder="Who is responsible?" />
-                                <button id="addTask">Add Task</button>
-                            </div>
-                        </div>
-                            <br><br>
-                            <p><a href="../index.html">Zurück </a></p>
-                        </div>
-                    </div>
-                </div>
+        <h5 id="nrTodos" class="center">You have 0 to-dos</h5>
+
+        <div>
+            <ul id="taskList" class="list-group list-group-flush flex-container">
+
+            </ul>
+            <div id="control" class="input center">
+                <input class="center" type="text" id="txtNewTask" autofocus placeholder="Enter Task" />
+                <input class="center"  type="text" id="txtResponsible" placeholder="Who is responsible?" />
+                <button class="btn-sm center btn btn-success "  id="addTask">Add Task</button>
+                <div class="center"></div><button class="btn-sm btn btn-danger btn-delete-all" id="deleteAll" onclick="deleteAllTasks()">Clear all Tasks</button></div>
             </div>
         </div>
+        <br><br>
+        <p><a href="../index.html"><div class="center" >Zurück </div></a></p>
+
     </div>
 
 </body>
