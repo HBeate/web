@@ -1,0 +1,65 @@
+@media(min-width:468px){
+
+  }
+  .container {
+    display: grid;
+    grid-template-columns: auto 100px auto;
+    /* auto auto auto -> werden automatisch aufgeteilt / % auch mögl, oder mischen */
+    grid-auto-rows: minmax(100px, auto);
+/*     column-gap: 2px;
+    row-gap: 2px */
+  }
+  .container-1, .container-2{
+    display:flex;
+    /*
+    align-items:flex-start;
+    align-items:flex-end;
+    align-items:center;
+    
+    flex-direction:column;
+    */
+
+        /*
+    justify-content:flex-start;
+    justify-content:flex-end;
+    justify-content:center;
+    justify-content:space-around;
+    */
+    justify-content:space-between;
+  }
+  
+ .container-3, .container-4, .container-5{
+    display:flex;  
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .container-3, .container-4, .container-5{
+    display:flex;  
+    flex-wrap:wrap;
+    justify-content:space-between;
+  } 
+  
+  .container-1 div, .container-2 div, .container-3 div, .container-4 div, .container-5 div{
+    border:1px #ccc solid;
+  /*   padding:10px; */
+  }
+  
+  .container-1-box-1{
+    flex:3;
+/*     flex-basis: 75%;  */
+  }
+  
+  .container-1-box-2{
+    flex:1;
+/*     flex-basis: 25%;  */ 
+  }
+  .container-1-box-1, .container-1-box-2{
+
+    border:1px #ccc solid;
+    padding:10px;
+  }
+.container-2-box, .container-3-box, .container-4-box, .container-5-box{
+    flex:1; 
+    border:1px #ccc solid;
+    padding:10px;
+  }

@@ -17,9 +17,7 @@ li {
     float: right;
 }
 .center {
-/*     margin: auto; */
 text-align: center;
-
 }
 .flex-container {
     display: flex;

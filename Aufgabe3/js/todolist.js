@@ -43,7 +43,7 @@ function addTask() {
 
 function numberToDos() {
     var nrTasks = tasks.length;
-    document.getElementById("nrTodos").innerHTML = "You have " + nrTasks + " to-dos";
+    document.getElementById("nrTodos").innerHTML = "You have " + nrTasks + " tasks";
 }
 
 function printTaskList() {
@@ -78,7 +78,7 @@ function getHTMLTasks() {
             checked = "checked";
         }
 
-        html += "<li class='list-group-item'><div class='d-flex '><div class='p-2 bd-highlight'><input class='checkbox' onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/></div>" + "<div class='p-2 flex-grow-1 bd-highlight'>" + element.name + "</div><div class='p-2 bd-highlight'>" + element.responsible + "</div><div class='p-2 bd-highlight'>"  /* + index  */ + "</div>" + "  <div class='p-2 bd-highlight'><button type='button'  onCLick='deleteTask(this)' name='button' class='btn btn-danger btn-primary btn-sm' data-index='" + index + "'>Delete</div></div></div></li>" /* an das HTML anhängen*/
+        html += "<li class='list-group-item'><div class='d-flex '><div class='p-2 bd-highlight'><input class='checkbox' onclick='markTask(this)' name='checkbox' data-index='" + index + "' type='checkbox'" + checked + "/></div>" + "<div class='p-2 flex-grow-1 bd-highlight'>" + element.name + "</div><div class='p-2 flex-grow-1 bd-highlight'>" + element.responsible + "</div><div class='p-2 bd-highlight'>"  /* + index  */ + "</div>" + "  <div class='p-2 bd-highlight'><button type='button'  onCLick='deleteTask(this)' name='button' class='btn btn-danger btn-primary btn-sm' data-index='" + index + "'>Delete</div></div></div></li>" /* an das HTML anhängen*/
 /* 
         console.log(element); */
         index++;

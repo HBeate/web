@@ -11,8 +11,8 @@ const names = [
 ]
 function clickLogin() {
 
-    var name = document.getElementById("usrname").value;
-    var password = document.getElementById("pw").value;
+    var name = document.getElementById("formGroupExampleInput").value;
+    var password = document.getElementById("inputPassword").value;
     var hasFound = false;
     for (let i = 0; i < names.length; i++) {
         if (name === names[i].usrname && password == names[i].pw) {
