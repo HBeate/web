@@ -11,6 +11,9 @@ text-align: center;}
     background-image: url('../media/thumbnail_IMG_1908.jpg');
     margin: 20px auto
 }
+.center {
+    text-align: center;
+    }
 .calculator {
     width: 320px;
     height: 520px;
