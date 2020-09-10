@@ -12,13 +12,16 @@ var numberCounterToReset = false;
 
 function addCalculation(value) {
 
-/*     if(!isNaN(value) && usedComma)
+    if(!isNaN(value))
     {
         numberCounter++;
     } else{
-
+        if(value === "."){
+            numberCounter++;
+        } else {
             numberCounterToReset = true;
-    } */
+        }
+    }
     if((value === "+" || value === "-" || value === "*" || value === "/" ||  value === "=") && (lastInput === "+" || lastInput === "-" || lastInput === "*" || lastInput === "/" ||  lastInput === "=")){
         return;
     } 
@@ -94,7 +97,7 @@ function addCalculation(value) {
 function solveCalculation() {
     addCalculation('='); // 
     var result = "";
-    result = eval(inputString).toPrecision(numberCounter); // it computes the calculation
+    result = eval(inputString); // it computes the calculation
     document.getElementById('result').value = result; //writes the result into the calculator result text field
     inputString = result; // puts the result into the inputString
     result = "" // clears result
