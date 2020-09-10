@@ -1,0 +1,43 @@
+.container {
+    max-width: 1000px;
+    height: 550px;
+    background-image: url('../media/thumbnail_IMG_1908.jpg');
+    margin: 20px auto;
+}
+
+#passwortschutz {
+    margin: auto;
+    top: 20px;
+    position: relative;
+    border-radius: 5px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+h2{
+    margin-top:10px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.center {
+    text-align: center;
+}
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+a:visited {
+    color: #ffffff;
+}
+a:link {
+    color: #ffffff;
+}
+.labelPw{
+    text-align: right;
+    color:white;
+}

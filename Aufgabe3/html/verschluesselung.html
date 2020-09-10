@@ -13,17 +13,17 @@
 </head>
 
 <body>
-
+    <h2>Online Encrypting Tool</h2>
     <div class="container">
         <div class="box item1">
-            <h2>Online Encrypting Tool</h2>
+
         </div>
-        <div class="box item2"><textarea onkeyup="codeMessage(false)" id="decoded" name="decoded" rows="4" cols="50" placeholder="unencrypted"></textarea></div>
-        <div class="box item3"><label for="quantity">Shift</label><br>
+        <div class="box item2"><textarea onkeyup="codeMessage(false)" id="decoded" name="decoded"  placeholder="unencrypted"></textarea></div>
+        <div class="box item3 center"><label for="quantity">Shift</label><br>
             <input type="number" click="" onclick="selectOffset(), codeMessage(false)" id="offset" name="offset" min="1" max="25" value="1"><br>
-        <br><button type="button" onclick="ClearFields();">Clear</button></div>
-        <div class="box item4"><textarea onblur="codeMessage(true)" id="coded" name="coded" rows="4" cols="50" placeholder="encrypted"></textarea></div>
-        <p><a class="box item5" href="../index.html">Zurück </a></p>
+        <br><button class="btn-sm center btn btn-success " type="button" onclick="ClearFields();">Clear</button></div>
+        <div class="box item4"><textarea onblur="codeMessage(true)" id="coded" name="coded"placeholder="encrypted"></textarea></div>
+        <p><a href="../index.html"><div class="box item5">Zurück</div> </a></p>
     </div>
 
 </body>

@@ -1,43 +1,75 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+h2 {
+    margin-top:10px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+a:visited {
+    color: #ffffff;
+}
+a:link {
+    color: #ffffff;
+}
+.container {
+    max-width: 1000px;
+    height: 550px;
+    background-image: url('../media/thumbnail_IMG_1908.jpg');
+    margin: 20px auto;
+}
+table {
+    border-radius: 5px;
+
+}
 table,
 td,
 tr {
     border-spacing: 4px;
     padding: 0;
 }
-table {
-    background-color: lightgray;
-}
-.calculator{
-    width: 210px;
-    height: 354px;
-    background-color: white;
+
+.calculator {
+    width: 208px;
+    height: 353px;
+    background-color: rgb(134, 152, 212);
     margin: auto;
     top: 20px;
     position: relative;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .center {
     text-align: center;
 }
 .inputCalc {
     border: 0;
-    background-color: lightgray;
     width: 208px;
     height: 50px;
     text-align: right;
     padding-right: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
 }
 .btnCalc {
     width: 50px;
     height: 50px;
+    border-radius: 8px;
 }
 .btnClear {
-    width: 158px;
+    width: 156px;
     height: 50px;
+    border-radius: 8px;
 }
 .resultCalc {
     border: 0;
-    background-color: lightgray;
     width: 208px;
     height: 50px;
     text-align: right;

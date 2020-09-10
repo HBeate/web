@@ -4,7 +4,8 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>A Basic Calculator</title>
+        
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
         <link a href="../css/taschenrechner.css" type="text/css" rel="stylesheet">
         <script src="../js/taschenrechner.js"></script>
@@ -12,19 +13,17 @@
 
 <body>
 <h2>Taschenrechner</h2>
-        <div class="container">
-
-                <div class="calculator">
-                        <div class="result">
-                                <div class="history">
-                                        <p id="calculation" class="inputCalc">9*9</p>
-                                </div>
-                                <div class="output">
-                                        <p id="result" class="resultCalc">81</p>
-                                </div>
-
+<div id="container">
+        <div id="calculator">
+                <div id="result">
+                        <div id="history">
+                                <p id="history-value"></p>
                         </div>
-                        <div class="keyboard">
+                        <div id="output">
+                                <p id="output-value"></p>
+                        </div>
+                </div>
+                <div id="keyboard">
                                 <button class="operator" id="clear">C</button>
                                 <button class="operator" id="backspace">CE</button>
                                 <button class="operator" id="%">%</button>
@@ -41,9 +40,9 @@
                                 <button class="number" id="2">2</button>
                                 <button class="number" id="3">3</button>
                                 <button class="operator" id="add">+</button>
-                                <button class="operator" id="negtive">+/-</button>
+                                <button class="empty" id="empty"></button>
                                 <button class="number" id="0">0</button>
-                                <button class="operator" id=".">.</button>
+                                <button class="empty" id="empty"></button>
                                 <button class="operator" id="=">=</button>
                         </div>
                 </div>

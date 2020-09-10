@@ -1,39 +1,51 @@
-body {
-    text-align: left;
-}
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    
-    /*     text-align: center; */
-}
-.input{
-    align-items: center;
-}
-.right {
-    float: right;
-}
-.center {
-text-align: center;
-}
-.flex-container {
-    display: flex;
-}
-.flex-item > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-}
-.list-group-item{
-    padding: 0px;
+ body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+} 
+#container{
+max-width: 1000px;
+height: auto;
+background-image: url(../media/thumbnail_IMG_1908.jpg);
+margin: 20px auto;
+}  
+#toDoList{
+    width: 990px;
+    height: 500px;
+/*     background-color: rgb(180, 180, 180, 0.4); */
+    padding: 20px;
 }
 h5{
+
+    color: white;
     padding-bottom: 20px;
 }
-.btn-delete-all {
-    margin-top: 20px;
+h2 {
+    text-align:center;
+    color: white;
 }
+
+.list-group-item {
+padding: 0;
+}
+.input{
+    margin-top: 10px;
+}
+.btn-delete-all {
+margin-top: 20px;
+}
+a{
+    align-self: center;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+a:visited {
+    color: white;
+}
+a:link {
+    color: #ffffff;
+    padding:20px;
+}
+ 

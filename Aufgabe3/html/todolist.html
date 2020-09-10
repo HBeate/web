@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,28 +15,41 @@
 
 </head>
 
+
 <body>
-    <div class="container">
-        <h2 class ="center">To-Do List</h2><br>
+    <h2>To-Do List</h2>
+    <div id="container">
+         <div id="toDoList"> 
 
-        <h5 id="nrTodos" class="center">You have 0 tasks</h5>
 
-        <div>
-            <ul id="taskList" class="list-group list-group-flush flex-container">
+            <h5 id="nrTodos" class="  center ">You have 0 tasks</h5>
 
-            </ul>
-            <div id="control" class="input center">
-                <input class="center" type="text" id="txtNewTask" autofocus placeholder="Enter Task" />
-                <input class="center"  type="text" id="txtResponsible" placeholder="Who is responsible?" />
-                <button class="btn-sm center btn btn-success "  id="addTask">Add Task</button>
-                <div class="center"><button class="btn-sm btn btn-danger btn-delete-all" id="deleteAll" onclick="deleteAllTasks()">Clear all Tasks</button></div>
+            <div id="containerList">
+                <ul id="taskList" class="list-group list-group-flush flex-container">
+
+                </ul>
+                <div id="control" class="input center">
+                    <input class=" center input" type="text" id="txtNewTask" autofocus placeholder="Enter Task" />
+                    <input class=" center input " type="text" id="txtResponsible" placeholder="Who is responsible?" />
+                    <button class="  btn-sm center btn btn-success " id="addTask">Add Task</button>
+                    <div class=" center"><button class="btn-sm btn btn-danger btn-delete-all" id="deleteAll" onclick="deleteAllTasks()">Clear all Tasks</button></div>
+                </div>
             </div>
         </div>
         <br><br>
-        <p><a href="../index.html"><div class="center" >Zurück </div></a></p>
+        <p><a href="../index.html"><div class="center">Zurück </div></a></p>
 
-    </div>
+     </div> 
 
 </body>
+ 
+
+
+</html> 
+
+
+
+
+
 
 </html>

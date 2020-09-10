@@ -37,7 +37,7 @@ function addTask() {
         document.getElementById("txtNewTask").focus();
         numberToDos();
         console.log(tasksFromLocalStorage);
-        storeTasks();
+         storeTasks(); 
     }
 }
 
@@ -56,7 +56,7 @@ function markTask(element) {
     let isChecked = element.checked;
     tasks[index].isDone = isChecked;
     printTaskList();
-    storeTasks();
+    storeTasks(); 
 }
 
 function deleteTask(element) {
@@ -65,7 +65,7 @@ function deleteTask(element) {
     printTaskList();
     document.getElementById("txtNewTask").focus();
     numberToDos();
-    storeTasks();
+     storeTasks(); 
 }
 
 function getHTMLTasks() {
@@ -92,13 +92,13 @@ function storeTasks() {
 }
 
 //Daten von localStorage holen und Array füllen
-function getStoredTasks() {
+ function getStoredTasks() {
     tasks = [];
     //   tasks.push(document.getElementById("toDoList").value);
      tasks = JSON.parse(localStorage.getItem('toDoList'));
     localStorage.setItem('toDoList', JSON.stringify(tasks));
     //------------^store the item by stringify--^
-}
+} 
 function deleteAllTasks(){
     tasks.length=0;
     numberToDos();
