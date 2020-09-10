@@ -6,17 +6,42 @@ var myArray = [];
 var inputString = "";
 var numberString = "";
 var lastInput = "";
+var usedComma = false;
+var numberCounter = 0;
+var numberCounterToReset = false;
 
 function addCalculation(value) {
 
-    if (isNaN(lastInput) && isNaN(value) && lastInput !== "=") {
+/*     if(!isNaN(value) && usedComma)
+    {
+        numberCounter++;
+    } else{
+
+            numberCounterToReset = true;
+    } */
+    if((value === "+" || value === "-" || value === "*" || value === "/" ||  value === "=") && (lastInput === "+" || lastInput === "-" || lastInput === "*" || lastInput === "/" ||  lastInput === "=")){
+        return;
+    } 
+    if((value === "+" || value === "-" || value === "*" || value === "/" ||  value === "=")){
+        usedComma  = false;
+    }
+
+    if(usedComma && value === ".") {
+        return;
+    }
+
+    if(value === "."){
+        usedComma = true;
+    }
+
+    if (isNaN(lastInput) && isNaN(value) && value !== "=" && lastInput !== "+-") {
         console.log("the last two are not numbers");
         var lastElement = myArray.length - 1;
         myArray[lastElement] = value;
         lastInput = value;
         value = "";  
     }
-    if (myArray.length === 0 && numberString === "" && (value === "+" || value === "-" || value === "*" || value === "/")) {
+    if (myArray.length === 0 && numberString === "" && (value === "+" || value === "-" || value === "*" || value === "/" ||  value === "=" ||  value === "+-")) {
         alert("Please, begin the calculation with a number!");
         return;
     }
@@ -69,10 +94,13 @@ function addCalculation(value) {
 function solveCalculation() {
     addCalculation('='); // 
     var result = "";
-    result = eval(inputString); // it computes the calculation
+    result = eval(inputString).toPrecision(numberCounter); // it computes the calculation
     document.getElementById('result').value = result; //writes the result into the calculator result text field
     inputString = result; // puts the result into the inputString
     result = "" // clears result
+    lastInput = result;
+    numberCounterToReset = false;
+    numberCounter = 0;
 
 }
 function clearAll() { // clears variables, strings, array & textfields of the calculator
@@ -88,6 +116,8 @@ function negativeNumber() {
     var newValue = myArray[lastElement]; // gets the value of the last element of the array
     var checkIfNumber = parseInt(newValue); // analyses it newValue is a number
     var secondLastElement = lastElement - 1; // gets the position of the second to last element of the array
+    if(secondLastElement < 0)
+        secondLastElement = 0;
     var valueSecondLastElement = myArray[secondLastElement] // gets the value of the second to last element of the array
     if (!isNaN(checkIfNumber)) { // if checkIfNumber is a number
         if (valueSecondLastElement === "+") { // if valueSecondLastElement is a +
