@@ -6,16 +6,16 @@
 max-width: 1000px;
 height: auto;
 background-image: url(../media/thumbnail_IMG_1908.jpg);
+background-repeat: no-repeat;
 margin: 20px auto;
 }  
 #toDoList{
-    width: 990px;
+    max-width: 990px;
     height: 500px;
 /*     background-color: rgb(180, 180, 180, 0.4); */
     padding: 20px;
 }
 h5{
-
     color: white;
     padding-bottom: 20px;
 }
@@ -23,7 +23,6 @@ h2 {
     text-align:center;
     color: white;
 }
-
 .list-group-item {
 padding: 0;
 }
@@ -47,5 +46,8 @@ a:visited {
 a:link {
     color: #ffffff;
     padding:20px;
+}
+.center {
+    text-align: center;
 }
  
