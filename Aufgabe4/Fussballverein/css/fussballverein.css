@@ -1,17 +1,84 @@
+*{
+/*     font-size: 18px;
+    --font-size-big: 1.5rem;
+    --font-size-medium: 1.3rem;
+    --font-size-normal:1rem;
+    --font-size-small: 0.8rem; */
+    --color-bw-blue: rgb(72, 72, 148);
+}
+body {
+    overflow-y: scroll;
+    background-color: var(--color-bw-blue);
+}
+.container{
+    background-color: white;
+}
+.bg{
+    background-color: var(--color-bw-blue);
+}
 .card-img-top {
     max-width: 150px;
-
 }
-h1, h2 {
+h1,
+h2 {
     margin: 20px;
     padding-top: 80px;
 }
-
-
 .img-fluid {
     max-width: 100%;
     max-height: 200px;
 }
-.logo{
+.logo {
     background-color: white;
+}
+.welcome{
+    max-width: 100%;
+    height: 416px;
+    background-image: url('../media/cropped-Header.jpg');
+    margin: 70px auto
+}
+.SPK{
+    align-self: center;
+    width: 80%;
+    min-height: 140px;
+    background-color: black;
+    margin: 20px auto;
+    position: relative;
+    
+}
+p{
+    color: grey;
+    text-align: center;
+}
+h3{
+    padding-top:20px;
+    color: white;
+    text-align: center;
+}
+hr{
+    height:1px;
+    width: 200px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+}
+h3:hover{
+    color: var(--color-bw-blue);
+
+}
+.navbar-brand{
+    background-color: weiss;
+}
+img{
+    text-align:center;
+}
+
+.card-img-top{
+    margin-top: 10px;;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.2);
+    align-self: center;
+}
+.card{
+    border-style: nonr;
 }
