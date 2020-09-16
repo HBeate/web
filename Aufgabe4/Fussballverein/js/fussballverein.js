@@ -46,7 +46,7 @@ function loadPlayersForTeam(team, id) {
 
 }
 function loadResults() {
-    fetch(urlTeams, {
+    fetch(urlResults, {
         headers: {
             "x-auth-token": token
         }
@@ -56,7 +56,7 @@ function loadResults() {
 
             data.standings[0].table.forEach(element => {
 
-                html+= "<th scope='row'>"+ position+"</th><td>.</td><td><img src='"+ crestUrl+ " alt=''></td><td>"+element.name+"</td><td>"+playedGames+"</td><td>"+won+"</td><td>"+draw+"</td><td>"+lost+"</td><td>"+goalsFor+":"+goalsAgainst+"</td><td>"+goalDifference+"</td><td>"+points+"</td>"
+                html+= "<th scope='row'>"+ table.position+"</th><td>.</td><td><img src='"+ table.crestUrl+ " alt=''></td><td>"+table.element.name+"</td><td>"+table.playedGames+"</td><td>"+table.won+"</td><td>"+table.draw+"</td><td>"+table.lost+"</td><td>"+table.goalsFor+":"+table.goalsAgainst+"</td><td>"+table.goalDifference+"</td><td>"+table.points+"</td>"
 
             });
             document.getElementById("tableResults").innerHTML = html;
