@@ -35,3 +35,4 @@ let urlResults = "http://api.football-data.org/v2/competitions/2002/standings?se
         
     }*/ 
 
+loadTableResults();
