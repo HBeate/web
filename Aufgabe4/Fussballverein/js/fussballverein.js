@@ -6,7 +6,7 @@ let token = '4aaa8f2fcfdb487482bbd4c60c7cf86d';
 function loadAllTeams() {
     fetch(urlTeams, {
         headers: {
-            "x-auth-token": token,
+            "x-auth-token": "4aaa8f2fcfdb487482bbd4c60c7cf86d",
 
         }
     }).then(response => response.json())
