@@ -6,7 +6,8 @@ let token = '4aaa8f2fcfdb487482bbd4c60c7cf86d';
 function loadAllTeams() {
     fetch(urlTeams, {
         headers: {
-            "x-auth-token": token
+            "x-auth-token": token,
+
         }
     }).then(response => response.json())
         .then(function (data) {
@@ -53,7 +54,7 @@ function loadResults() {
         .then(function (data) {
             let html = "";
 
-            data.standings.table.forEach(element => {
+            data.standings[0].table.forEach(element => {
 
                 html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "' width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
 
@@ -64,29 +65,6 @@ function loadResults() {
             console.warn('Something went wrong.', err);
         });
 }
-/* function loadTableResults() {
-    fetch(urlResults, {
-        headers: {
-            "x-auth-token": "4aaa8f2fcfdb487482bbd4c60c7cf86d"
-        }
-    })
-    .then(response => response.json())
-        .then(function (data) {
-            let html = "test";
-
-            data.stage.forEach(element => {
-                
-                  html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "' width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
- 
-            });
-            document.getElementById("tableResults").innerHTML = html;
-        }).catch(function (err) {
-            // There was an error
-            console.warn('Something went wrong.', err);
-        });
-} */
-
-
 
 loadAllTeams();
 loadPlayersForTeam('team1', 5);
