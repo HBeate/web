@@ -14,6 +14,9 @@ body {
     background-color: white;
     
 }
+.teamLinkPlayers{
+    color:var(--color-bw-blue);
+}
 
 .bg {
     background-color: var(--color-bw-blue);
