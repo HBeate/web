@@ -59,7 +59,7 @@ function loadResults() {
                 html+= "<th scope='row'>"+ position+"</th><td>.</td><td><img src='"+ crestUrl+ " alt=''></td><td>"+element.name+"</td><td>"+playedGames+"</td><td>"+won+"</td><td>"+draw+"</td><td>"+lost+"</td><td>"+goalsFor+":"+goalsAgainst+"</td><td>"+goalDifference+"</td><td>"+points+"</td>"
 
             });
-            document.getElementById("teams").innerHTML = html;
+            document.getElementById("tableResults").innerHTML = html;
         }).catch(function (err) {
             // There was an error
             console.warn('Something went wrong.', err);
