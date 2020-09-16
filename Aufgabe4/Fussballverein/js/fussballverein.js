@@ -28,7 +28,7 @@ function loadAllTeams() {
 function loadPlayersForTeam(team, id) {
     fetch(urlPlayers + id, {
         headers: {
-            "x-auth-token": token
+            "x-auth-token": "4aaa8f2fcfdb487482bbd4c60c7cf86d"
         }
     }).then(response => response.json())
         .then(function (data) {
@@ -48,7 +48,7 @@ function loadPlayersForTeam(team, id) {
 function loadResults() {
     fetch(urlResults, {
         headers: {
-            "x-auth-token": token
+            "x-auth-token": "4aaa8f2fcfdb487482bbd4c60c7cf86d"
         }
     }).then(response => response.json())
         .then(function (data) {
