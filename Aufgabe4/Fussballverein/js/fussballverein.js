@@ -56,7 +56,7 @@ function loadResults() {
 
             data.standings[0].table.forEach(element => {
 
-                html+= "<th scope='row'>1</th><td>.</td><td><img src='"+ crestUrl+ " alt=''></td><td>"+element.name+"</td><td>"+playedGames+"</td><td>"+won+"</td><td>"+draw+"</td><td>"+lost+"</td><td>"+goalsFor+":"+goalsAgainst+"</td><td>"+goalDifference+"</td><td>"+points+"</td>"
+                html+= "<th scope='row'>"+ position+"</th><td>.</td><td><img src='"+ crestUrl+ " alt=''></td><td>"+element.name+"</td><td>"+playedGames+"</td><td>"+won+"</td><td>"+draw+"</td><td>"+lost+"</td><td>"+goalsFor+":"+goalsAgainst+"</td><td>"+goalDifference+"</td><td>"+points+"</td>"
 
             });
             document.getElementById("teams").innerHTML = html;
