@@ -16,7 +16,7 @@ function loadAllTeams() {
             data.teams.forEach(element => {
                 let id = element.id;
                 let team = element.name;
-                html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "' width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers' onclick='loadPlayersForTeam("+ element.id + ")'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
+                html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "' width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers' onclick='loadPlayersForTeam(" + element.id + ")'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
                 // 
 
 
@@ -37,8 +37,14 @@ function loadPlayersForTeam(id) {
     }).then(response => response.json())
         .then(function (data) {
             let html = "";
+
             data.squad.forEach(element => {
-                html += "<div class='col '><div class='card text-center ' '><img src='../media/player_dummy.jpg' class='card-img-top' alt='Player Picture'><div class='card-body'><h5 class='card-title'>" + element.name + "</h5><p class='card-text'>" + element.dateOfBirth + "<br>" + element.position + "</p></div></div></div>"
+                
+                let bdate = new Date(element.dateOfBirth);
+                birthdate = bdate.toLocaleDateString();
+
+/*                 alert('cut:  ' + DOBCut); */
+                html += "<div class='col '><div class='card text-center ' '><img src='../media/player_dummy.jpg' class='card-img-top' alt='Player Picture'><div class='card-body'><h5 class='card-title'>" + element.name + "</h5><p class='card-text'>" + birthdate + "<br>" + element.position + "</p></div></div></div>"
 
             });
             document.getElementById("squad").innerHTML = html;
@@ -72,9 +78,6 @@ function loadResults() {
         });
 }
 
-function linkToTeam() {
-
-}
 
 loadAllTeams();
 loadPlayersForTeam(1);
