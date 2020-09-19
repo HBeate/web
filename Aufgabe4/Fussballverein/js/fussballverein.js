@@ -1,6 +1,6 @@
-let urlTeams = "http://api.football-data.org/v2/competitions/2002/teams?season=2019";
-let urlPlayers = "http://api.football-data.org/v2/teams/";
-let urlResults = "http://api.football-data.org/v2/competitions/2002/standings?season=2019";
+let urlTeams = "https://api.football-data.org/v2/competitions/2002/teams?season=2019";
+let urlPlayers = "https://api.football-data.org/v2/teams/";
+let urlResults = "https://api.football-data.org/v2/competitions/2002/standings?season=2019";
 let token = '4aaa8f2fcfdb487482bbd4c60c7cf86d';
 
 function loadAllTeams() {
