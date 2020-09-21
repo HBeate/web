@@ -1,7 +1,13 @@
+
+
+// check out overlay & CSS transition
+
+
+
 let urlLeagues = "https://api.football-data.org/v2/competitions?plan=TIER_ONE";
 let urlTeams = "https://api.football-data.org/v2/competitions/"; /*2002/teams?season=2019"; */
 let urlPlayers = "https://api.football-data.org/v2/teams/";
-let urlResults = "https://api.football-data.org/v2/competitions/2002/standings?season=2019";
+let urlResults = "https://api.football-data.org/v2/competitions/"; /* 2002/standings?season=2019";*/
 let token = '4aaa8f2fcfdb487482bbd4c60c7cf86d';
 
 function loadAllFreeLeagues() {
@@ -62,6 +68,7 @@ function loadAllTeams(id) {
 }
 // ich hole mir die einzelnen Spieler vom jeweiligen Team
 function loadPlayersForTeam(id) {
+    loadResults(id);
     var source = document.getElementById("playersForTeam-template").innerHTML;
     var template = Handlebars.compile(source);
 
@@ -75,9 +82,10 @@ function loadPlayersForTeam(id) {
             let html = "";
 
             data.squad.forEach(element => {
-                /*                 let bdate = new Date(element.dateOfBirth);
-                                birthdate = bdate.toLocaleDateString();
-                                 */
+                let bdate = new Date(element.dateOfBirth);
+                birthdate = bdate.toLocaleDateString();
+                element.formattedDate = birthdate;
+
                 html += template(element);
 
 
@@ -88,18 +96,24 @@ function loadPlayersForTeam(id) {
             document.getElementById("squad").innerHTML = html;
             document.getElementById("teamName").innerHTML = 'Spieler von ' + data.name;
 
+            // OVERLAY EXAMPLE 
+            // let element = document.getElementById("squad");
+            // element.className = element.className.replace("hideOverlay", "showOverlay");
+
         }).catch(function (err) {
             // There was an error
             console.warn('Something went wrong.', err);
         });
+        return false;
 
 }
 // ich hole mir die Ergebnistabelle
-function loadResults() {
+function loadResults(id) {
+
     var source = document.getElementById("results-template").innerHTML;
     var template = Handlebars.compile(source);
-
-    fetch(urlResults, {
+    let url = urlResults + id + "/standings?season=2019"
+    fetch(url, {
         headers: {
             "x-auth-token": token
         }
@@ -113,16 +127,18 @@ function loadResults() {
                  */
             });
             document.getElementById("tableResults").innerHTML = html;
+            document.getElementById("tabelleJump").innerHTML = 'Tabelle von ' + data.competition.name;
         }).catch(function (err) {
             // There was an error
             console.warn('Something went wrong.', err);
         });
+    return false;
 }
 
 loadAllFreeLeagues();
 loadAllTeams(2002);
 loadPlayersForTeam(1);
-loadResults();
+loadResults(2002);
 
 
 

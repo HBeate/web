@@ -93,3 +93,17 @@ img {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+/*  OVERLAY EXAMPLE  
+
+.showOverlay{
+   position: absolute;
+   width: 50%;
+   height:50%;
+   overflow:hidden;
+   top:0px;
+}
+
+.hideOverlay{
+    display:none;
+}*/

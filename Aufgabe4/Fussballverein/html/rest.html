@@ -42,7 +42,10 @@
           <a class="nav-link disabled" href="../html/rest.html#teamsJump">REST-Version</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../html/rest.html#teamsJump">Teams<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../html/rest.html#leaguesJump">League<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/rest.html#teamsJump">Teams</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="../html/rest.html#tabelleJump">Tabelle</a>
@@ -94,7 +97,7 @@
     </div>
 
     <h1 id="teamName"></h1>
-    <div id="squad" class="row row-cols-4 ">
+    <div id="squad" class="row row-cols-4 hideOverlay ">
       <!-- SQUAD -->
     </div>
 
@@ -199,7 +202,6 @@
     <td>{{area.name}}</td>
     <td>{{area.countryCode}}</td>
   </tr>
-
 </script>
 
 <script id="playersForTeam-template" type="text/x-handlebars-template">
@@ -207,7 +209,7 @@
     <div class="card text-center"><img src="../media/player_dummy.jpg" class="card-img-top" alt="Player Picture">
       <div class="card-body">
         <h5 class="card-title">{{name}}</h5
-          ><p class="card-text">{{dateOfBirth}}<br>{{position}}</p>
+          ><p class="card-text">{{formattedDate}}<br>{{position}}</p>
         </div>
       </div>
     </div>
@@ -224,6 +226,5 @@
     <td>{{lost}}</td>
     <td>{{goalsFor}}:{{goalsAgainst}}</td>
     <td>{{goalDifference}}</td>
-    <td>{{points}}</td></tr>"
-
+    <td>{{points}}</td></tr>
 </script>
