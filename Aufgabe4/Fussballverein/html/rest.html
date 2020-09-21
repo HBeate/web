@@ -16,12 +16,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-
+    <script src="../js/fussballverein.js" defer></script>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/fussballverein.css">
-  <script src="../js/fussballverein.js" defer></script>
+
 </head>
 
 <body>
@@ -37,19 +37,18 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto teams">
-        <li class="nav-item active">
-            <a class="nav-link" href="../html/rest.html">REST<span class="sr-only">(current)</span></a>
+        <li class="nav-item disabled">
+            <a class="nav-link disabled" href="../html/rest.html#teamsJump">REST-Version</a>
           </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="../html/teams.html">Teams</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="../html/rest.html#teamsJump">Teams<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="../html/tabelle.html">Tabelle</a>
+          <a class="nav-link" href="../html/rest.html#tabelleJump">Tabelle</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Spieler</span>
+        <li class="nav-item ">
+          <a class="nav-link " href="../html/rest.html#teamName">
+            Spieler
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../html/spieler.html">Kampfmannschaft</a>
@@ -59,7 +58,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../html/sponsoren.html">Sponsoren</a>
+          <a class="nav-link" href="../html/rest.html#sponsorenJump">Sponsoren</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -71,18 +70,34 @@
 
   <div class="container">
 
-    <h1>Teams</h1>
+    <h1 id="leaguesJump">Leagues</h1>
+    <div id="FreeLeagues">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Ensign</th>
+            <th scope="col">League</th>
+            <th scope="col">Country Code</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+        <tbody id="leagues">
+      <!-- LEAGUES -->
+        </tbody>
+      </table>
+    </div>
 
+    <h1 id="teamsJump">Teams</h1>
     <div id="teams">
       <!-- TEAMS -->
     </div>
+
     <h1 id="teamName"></h1>
     <div id="squad" class="row row-cols-4 ">
       <!-- SQUAD -->
     </div>
 
-
-    <h1>Tabelle</h1>
+    <h1 id="tabelleJump">Tabelle</h1>
     <table class="table">
       <thead>
         <tr>
@@ -100,9 +115,66 @@
       </thead>
       <tbody id="tableResults">
     <!-- TABELLE -->
-
       </tbody>
     </table>
+
+    <h1 id="sponsorenJump">Sponsoren</h1>
+    <!--         <div class="col d-flex align-items-center justify-content-center"> -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm  d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/10516850_856210677732014_8108716143257566394_n.png" class="img-fluid mx-auto"
+                        alt="">
+                </div>
+                <div class="col-sm  d-flex align-items-center justify-content-center">
+                    <img src="../media//sponsoren/1165828424_Logo_blaugrau_72dpi.jpg" class="img-fluid mx-auto" alt="">
+                </div>
+                <div class="col-sm  d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/469888_10151011342085853_645380666_o.jpg" class="img-fluid mx-auto" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/VSV-Logo.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm  d-flex align-items-center justify-content-center">
+                    <img src="../media//sponsoren/biedenkapp.jpg" alt="">
+                </div>
+                <div class="col-sm  d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/Bildschirmfoto-2015-08-07-um-18.30.18.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row align-items-cente justify-content-centerr">
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/esv_feldkirch_sportstadt_feldkirch.gif" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media//sponsoren/Firmenlogo.jpg" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img  src="../media/sponsoren/hilti_jehle.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/juergen-kloesch-malermeister.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media//sponsoren/logo-vm.gif" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/protec_logo.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media/sponsoren/sport-logo1.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="../media//sponsoren/Stadtwerke_Feldkirch_4c-1.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm   d-flex align-items-center justify-content-center">
+                    <img src="#" class="img-fluid" alt="">
+                </div>
 
   </div>
 

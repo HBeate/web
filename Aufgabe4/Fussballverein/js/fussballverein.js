@@ -1,10 +1,35 @@
-let urlTeams = "https://api.football-data.org/v2/competitions/2002/teams?season=2019";
+let urlLeagues = "https://api.football-data.org/v2/competitions?plan=TIER_ONE";
+let urlTeams = "https://api.football-data.org/v2/competitions/"; /*2002/teams?season=2019"; */
 let urlPlayers = "https://api.football-data.org/v2/teams/";
 let urlResults = "https://api.football-data.org/v2/competitions/2002/standings?season=2019";
 let token = '4aaa8f2fcfdb487482bbd4c60c7cf86d';
+
+ function loadAllFreeLeagues() {
+    fetch(urlLeagues, {
+        headers: {
+            "x-auth-token": token,
+        }
+    }).then(response => response.json())
+        .then(function (data) {
+            let html = "";
+
+
+
+
+            data.competitions.forEach(element => {
+
+                html += "<tr><td><img src='" + element.area.ensignUrl + "' width='50px' alt='Club Logo'></img></td/><td><a href='#' class='teamLinkPlayers' onclick='loadAllTeams(" + element.id + ")'>" + element.name + "</a></td><td>"+element.area.name+"</td><td>"+element.area.countryCode+"</td></tr>";
+            });
+            document.getElementById("leagues").innerHTML = html;
+        }).catch(function (err) {
+            console.warn('Something went wrong.', err);
+        });
+} 
 // ich hole mir die deutschen Teams
-function loadAllTeams() {
-    fetch(urlTeams, {
+function loadAllTeams(id) {
+    let url = urlTeams + id + "/teams?season=2019";
+    console.log(url);
+    fetch(url, {
         headers: {
             "x-auth-token": token,
 
@@ -16,7 +41,7 @@ function loadAllTeams() {
             data.teams.forEach(element => {
                 let id = element.id;
                 let team = element.name;
-                html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "' width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers' onclick='loadPlayersForTeam(" + element.id + ")'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
+                html += "<div class='row' data-id='" + element.id + "'><div class='col-sm'><img src='" + element.crestUrl + "'  width='50px' alt='Club Logo'></img></div><div class='col-sm'>" + element.id + "</div><div class='col-sm'><a href='#' class='teamLinkPlayers' onclick='loadPlayersForTeam(" + element.id + ")'>" + element.name + "</a></div><div class='col-sm'>" + element.address + "</div><div class='col-sm'>" + element.email + "</div></div>"
                 // 
 
 
@@ -29,8 +54,9 @@ function loadAllTeams() {
 }
 // ich hole mir die einzelnen Spieler vom jeweiligen Team
 function loadPlayersForTeam(id) {
-
-    fetch(urlPlayers + id, {
+let url = urlPlayers + id;
+console.log(url);
+    fetch(url, {
         headers: {
             "x-auth-token": token
         }
@@ -78,11 +104,10 @@ function loadResults() {
         });
 }
 
-
-loadAllTeams();
+loadAllFreeLeagues();
+loadAllTeams(2002);
 loadPlayersForTeam(1);
 loadResults();
-
 
 
 
