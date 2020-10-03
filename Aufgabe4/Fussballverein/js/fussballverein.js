@@ -35,6 +35,7 @@ function loadAllFreeLeagues() {
 }
 // ich hole mir die deutschen Teams
 function loadAllTeams(id) {
+    loadResults(id);
     var source = document.getElementById("team-template").innerHTML;
     var template = Handlebars.compile(source);
 
@@ -68,7 +69,7 @@ function loadAllTeams(id) {
 }
 // ich hole mir die einzelnen Spieler vom jeweiligen Team
 function loadPlayersForTeam(id) {
-    loadResults(id);
+
     var source = document.getElementById("playersForTeam-template").innerHTML;
     var template = Handlebars.compile(source);
 
@@ -97,8 +98,9 @@ function loadPlayersForTeam(id) {
             document.getElementById("teamName").innerHTML = 'Spieler von ' + data.name;
 
             // OVERLAY EXAMPLE 
-            // let element = document.getElementById("squad");
-            // element.className = element.className.replace("hideOverlay", "showOverlay");
+            let element = document.getElementById("squad");
+             element.className = element.className.replace("hideOverlay", "showOverlay"); 
+
 
         }).catch(function (err) {
             // There was an error
@@ -107,6 +109,16 @@ function loadPlayersForTeam(id) {
         return false;
 
 }
+
+//turn overlay on or off (loadPalyersForTeam)
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function hideOverlay() {
+    document.getElementById("squad").style.display = "none";
+  }
+
 // ich hole mir die Ergebnistabelle
 function loadResults(id) {
 
@@ -136,9 +148,9 @@ function loadResults(id) {
 }
 
 loadAllFreeLeagues();
-loadAllTeams(2002);
-loadPlayersForTeam(1);
-loadResults(2002);
+//loadAllTeams(2002);
+//loadPlayersForTeam(1);
+//loadResults(2002);
 
 
 

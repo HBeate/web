@@ -26,7 +26,7 @@
 </head>
 
 <body>
-
+ <!--  <div class="hideOverlay" onclick="hideOverlay()"></div> -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg">
     <a class="navbar-brand bg-light" href="../html/index.html">
       <img src="../media/Logo_BWFeldkirch.png" height="50" alt="" loading="lazy">
@@ -97,7 +97,7 @@
     </div>
 
     <h1 id="teamName"></h1>
-    <div id="squad" class="row row-cols-4 hideOverlay ">
+    <div id="squad" class="row row-cols-4 hideOverlay">
       <!-- SQUAD -->
     </div>
 
@@ -186,15 +186,7 @@
 
 </html>
 
-<script id="team-template" type="text/x-handlebars-template">
-  <div class='row' data-id={{id}}>
-    <div class="col-sm"><img src={{crestUrl}} width="50px" alt="Club Logo"></div>
-    <div class="col-sm">{{id}}</div>
-    <div class="col-sm"><a href="#" class="teamLinkPlayers" onclick="loadPlayersForTeam({{id}})">{{name}}</a></div>
-    <div class="col-sm">{{address}}</div>
-    <div class="col-sm">{{email}}</div>
-  </div>
-</script>
+
 
 <script id="freeLeagues-template" type="text/x-handlebars-template">
   <tr><td><img src={{area.ensignUrl}} width="50px" alt="Club Logo"></td>
@@ -202,6 +194,16 @@
     <td>{{area.name}}</td>
     <td>{{area.countryCode}}</td>
   </tr>
+</script>
+
+<script id="team-template" type="text/x-handlebars-template">
+  <div class='row' data-id={{id}}>
+    <div class="col-sm"><img src={{crestUrl}} width="50px" alt="Club Logo"></div>
+    <div class="col-sm">{{id}}</div>
+    <div class="col-sm"><a href="#" class="teamLinkPlayers " onclick="loadPlayersForTeam({{id}})">{{name}}</a></div>
+    <div class="col-sm">{{address}}</div>
+    <div class="col-sm">{{email}}</div>
+  </div>
 </script>
 
 <script id="playersForTeam-template" type="text/x-handlebars-template">
