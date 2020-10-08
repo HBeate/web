@@ -12,3 +12,8 @@ li{
     display: flex;
     justify-content: center;
 }
+
+.inputform{
+    display: flex;
+    justify-content: center;
+}

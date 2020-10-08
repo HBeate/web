@@ -4,31 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
+  <title>To-Do List Spring</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="script.js" defer></script>
-
+  <script src="script.js" defer crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="">
-    <div class="wrapper">
-      <ul id="todos">
-      </ul>
-    </div>
 
-    <form>
-      <div class="row">
-        <div class="col">
-          <input type="text" id="inputTask" placeholder="Task">
-        </div>
-        <div class="col">
-          <input type="text" id="inputName" placeholder="Name">
-        </div>
-      </div>
-      <br><button type="submit"id="save">Save</button>
-    </form>
+  <div class="wrapper">
+    <ul id="todos">
+    </ul>
   </div>
+  <div class="inputform">
+
+    <input type="text" id="inputTask" placeholder="Task">
+    <input type="text" id="inputName" placeholder="Name"><br>
+    <button id="save">Save</button><button id="clearList">Clear List</button>
+
+  </div>
+
 </body>
 
 </html>
